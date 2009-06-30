@@ -12,7 +12,11 @@ For more information please read the paper:
 
 Or visit the iHOP web site (http://www.ihop-net.org/)
 
-= iHOP web-service functions =
+= iHOP web-service =
+
+iHOP web services server and developers site are supported and provided by [http://www.cnio.es/ CNIO] groups SCompBio ([http://www.cnio.es/ing/grupos/plantillas/programa-grupos.asp?pag=660 Structural and Computational Biology]) and UBio ([http://ubio.bioinfo.cnio.es/ Bioinformatics Unit]).
+
+== Functions ==
 
  *  *getRelatedSymbols*, returns a list of the available iHOP symbols which can be the one you have typed in as free text.
 
