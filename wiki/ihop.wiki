@@ -1,3 +1,17 @@
+= iHOP - Information Hyperlinked over Proteins  =
+
+A network of concurring genes and proteins extends through the scientific literature touching on phenotypes, pathologies and gene function. 
+
+iHOP provides this network as a natural way of accessing millions of PubMed abstracts. By using genes and proteins as hyperlinks between sentences and abstracts, the information in PubMed can be converted into one navigable resource, bringing all advantages of the internet to scientific literature research. 
+
+iHOP was developed and created by Robert Hoffmann and is a free service from the academic domain, licenced under a Creative Commons Attribution-No Derivative Works 3.0 License.
+
+For more information please read the paper:
+
+ *  A Gene Network for Navigating the Literature. Hoffmann, R., Valencia, A. Nature Genetics 36, 664 (2004)
+
+Or visit the iHOP web site (http://www.ihop-net.org/)
+
 = iHOP web-service functions =
 
  *  *getRelatedSymbols*, returns a list of the available iHOP symbols which can be the one you have typed in as free text.
