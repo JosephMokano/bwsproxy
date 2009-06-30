@@ -1,10 +1,3 @@
-#summary One-sentence summary of this page.
-
-= iHOP =
-
-
-
-
 = iHOP web-service functions =
 
 *getRelatedSymbols*, returns a list of the available iHOP symbols which can be the one you have typed in as free text.
@@ -24,3 +17,33 @@
 *getLatestSymbolInformation*, returns the latest sentences and relationship information (from the iHOP's point of view) about the query gene symbol.
 
 *getPubMed*, returns a iHOP digested abstract from the input PMID.
+
+= How to use iHOP through the Biological Web Service Proxy =
+
+To use iHOP through the proxy the following parameters should be added:
+
+bwsp_format = json|row
+bwsp_cache = 0|1|2|3|4|5
+bwsp_rest= ihop url
+
+= Examples =
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getRelatedSymbols?gene=P53
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolsFromReference?reference=P38398
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/guessSymbolIdFromSymbolText?gene=P53&ncbiTaxId=10090
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/guessSymbolIdFromReference?reference=P87654
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolInfo?gene=P53&ncbiTaxId=9606
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolDefinitions?gene=BRCA1
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolInteractions?ihopid=32484
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getLatestSymbolInformation?gene=BRCA3&ncbiTaxId=9606
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getPubMed?pmid=15657137
+
+htttp://bwsp.bioinfo.cnio.es?bwsp_format=json&bwsp_cache=4&&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getPubMed?ihoppmid=10533688
