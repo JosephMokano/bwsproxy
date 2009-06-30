@@ -12,9 +12,9 @@ For more information please read the paper:
 
 Or visit the iHOP web site (http://www.ihop-net.org/)
 
-= iHOP web-service =
+= iHOP web-services =
 
-iHOP web services server and developers site are supported and provided by [http://www.cnio.es/ CNIO] groups SCompBio ([http://www.cnio.es/ing/grupos/plantillas/programa-grupos.asp?pag=660 Structural and Computational Biology]) and UBio ([http://ubio.bioinfo.cnio.es/ Bioinformatics Unit]).
+iHOP web services  and developers site are supported and provided by [http://www.cnio.es/ CNIO] groups SCompBio ([http://www.cnio.es/ing/grupos/plantillas/programa-grupos.asp?pag=660 Structural and Computational Biology]) and UBio ([http://ubio.bioinfo.cnio.es/ Bioinformatics Unit]).
 
 == Functions ==
 
