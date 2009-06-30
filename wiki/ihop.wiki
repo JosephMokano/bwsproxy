@@ -1,0 +1,26 @@
+#summary One-sentence summary of this page.
+
+= iHOP =
+
+
+
+
+= iHOP web-service functions =
+
+*getRelatedSymbols*, returns a list of the available iHOP symbols which can be the one you have typed in as free text.
+
+*getSymbolsFromReference*, returns a list of the available iHOP symbols which can be the related one to the biological reference used as input.
+
+*guessSymbolIdFromSymbolText*, guesses an iHOP symbol Id for the input symbol text and organism (represented as a NCBI Tax ID).
+
+*guessSymbolIdFromReference*, guesses an iHOP symbol Id for the input biological database reference.
+
+*getSymbolInfo*, returns some information about a gene symbol.
+
+*getSymbolDefinitions*, returns the sentences that iHOP used to define the input symbol.
+
+*getSymbolInteractions*, returns the sentences which are describing an interaction with other gene symbols.
+
+*getLatestSymbolInformation*, returns the latest sentences and relationship information (from the iHOP's point of view) about the query gene symbol.
+
+*getPubMed*, returns a iHOP digested abstract from the input PMID.
