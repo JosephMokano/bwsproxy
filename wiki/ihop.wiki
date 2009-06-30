@@ -40,9 +40,13 @@ iHOP web services  and developers site are supported and provided by [http://www
 
 = How to use iHOP through the Biological Web Service Proxy =
 
-To use iHOP through the proxy the following parameters should be added:
+To use iHOP through the proxy the following parameters should be added to the proxy URL:
 
-*bwsp_format* = row | json
+*bwsp_service* = iHOP
+
+Name of the service
+
+*bwsp_response_format* = row | json
 
 Response format, could be the row xml format provided by the iHOP web-service or a JSON formated output. 
 
