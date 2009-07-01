@@ -1,42 +1,13 @@
 = iHOP - Information Hyperlinked over Proteins  =
 
-A network of concurring genes and proteins extends through the scientific literature touching on phenotypes, pathologies and gene function. 
-
-iHOP provides this network as a natural way of accessing millions of PubMed abstracts. By using genes and proteins as hyperlinks between sentences and abstracts, the information in PubMed can be converted into one navigable resource, bringing all advantages of the internet to scientific literature research. 
-
-iHOP was developed and created by Robert Hoffmann and is a free service from the academic domain, licenced under a Creative Commons Attribution-No Derivative Works 3.0 License.
-
 For more information please read the paper:
 
  *  A Gene Network for Navigating the Literature. Hoffmann, R., Valencia, A. Nature Genetics 36, 664 (2004)
 
-Or visit the iHOP web site (http://www.ihop-net.org/)
+Or visit the iHOP web sites
 
-= iHOP web-services =
-
-iHOP web services were developed and created by José María Fernández González
-
-iHOP web services  and developers site are supported and provided by [http://www.cnio.es/ CNIO] groups SCompBio ([http://www.cnio.es/ing/grupos/plantillas/programa-grupos.asp?pag=660 Structural and Computational Biology]) and UBio ([http://ubio.bioinfo.cnio.es/ Bioinformatics Unit]).
-
-== Functions ==
-
- *  *getRelatedSymbols*, returns a list of the available iHOP symbols which can be the one you have typed in as free text.
-
- *  *getSymbolsFromReference*, returns a list of the available iHOP symbols which can be the related one to the biological reference used as input.
-
- *  *guessSymbolIdFromSymbolText*, guesses an iHOP symbol Id for the input symbol text and organism (represented as a NCBI Tax ID).
-
- *  *guessSymbolIdFromReference*, guesses an iHOP symbol Id for the input biological database reference.
-
- *  *getSymbolInfo*, returns some information about a gene symbol.
-
- *  *getSymbolDefinitions*, returns the sentences that iHOP used to define the input symbol.
-
- *  *getSymbolInteractions*, returns the sentences which are describing an interaction with other gene symbols.
-
- *  *getLatestSymbolInformation*, returns the latest sentences and relationship information (from the iHOP's point of view) about the query gene symbol.
-
- *  *getPubMed*, returns a iHOP digested abstract from the input PMID.
+ * http://www.ihop-net.org/ 
+* http://ubio.bioinfo.cnio.es/biotools/iHOP/
 
 = How to use iHOP through the Biological Web Services Proxy =
 
