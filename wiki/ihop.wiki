@@ -19,7 +19,7 @@ Name of the service
 
 *bwsp_response_format* = row | json
 
-Response format, could be the row xml format provided by the iHOP web-service or a JSON formated output. 
+Response format, could be the row xml format provided by the iHOP web service or a JSON formated output. 
 
 *bwsp_callback* = callback name
 
