@@ -1,5 +1,7 @@
 = Parts Registry DAS  =
 
+http://partsregistry.org/DAS_-_Distributed_Annotation_System
+
 = How to use the Parts Registry DAS through the Biological Web Services Proxy =
 
 To use iHOP through the proxy the following parameters should be added to the proxy URL:
