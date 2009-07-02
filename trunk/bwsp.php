@@ -22,7 +22,7 @@
  
  //proxy parameters
  $service 		= $_REQUEST['bwsp_service'];					// service name
- $format		= $_REQUEST['bwsp_output_format'];				// row|json
+ $format		= $_REQUEST['bwsp_response_format'];			// row|json
  $soap	 		= $_REQUEST['bwsp_soap'];						// soap call
  $restUrl 		= $_REQUEST['bwsp_rest'];						// rest call
  $cache			= $_REQUEST['bwsp_cache'];						// 0|1|2|3|4|5
