@@ -32,13 +32,12 @@
 		if (!$u)
 			return false;
 		
-		$buf ="POST ".$u['path']." HTTP/1.0\r\n";
-		$buf .="Host: ".$u['host']."\r\n";
-		$buf .="Content-type: application/x-www-form-urlencoded; charset=UTF-8\r\n";
-		$buf .="Content-length: ".strlen($u['query'])."\r\n";
-		$buf .="\r\n";
-		$buf .=$u['query'];
-
+		//force GET DAS request
+		if (preg_match('/\/das\//',$param['bwsp_rest']))
+			$buf = $this->buildGET($u);
+		else
+			$buf = $this->buildPOST($u);
+		
 		$fp = @fsockopen ($u['host'], 80);
 	
 		if (!$fp)
@@ -65,6 +64,44 @@
 		$this->jsonResponse = xml2json::transformXmlStringToJson($this->rowResponse);
 		return true;
 	}
- }
+
  
+	/**
+	 * buildPOST function.
+	 * 
+	 * @access public
+	 * @param mixed $u
+	 * @return void
+	 */
+	function buildPOST($u){
+		
+		$buf ="POST ".$u['path']." HTTP/1.0\r\n";
+		$buf .="Host: ".$u['host']."\r\n";
+		$buf .="Content-type: application/x-www-form-urlencoded; charset=UTF-8\r\n";
+		$buf .="Content-length: ".strlen($u['query'])."\r\n";
+		$buf .="\r\n";
+		$buf .=$u['query'];
+		
+		return $buf;
+	}
+	
+	/**
+	 * buildGET function.
+	 * 
+	 * @access public
+	 * @param mixed $u
+	 * @return void
+	 */
+	function buildGET($u){
+		
+		$buf ="GET ".$u['path']."?".$u['query']." HTTP/1.0\r\n";
+		$buf .="Host: ".$u['host']."\r\n";
+		$buf .="Content-type: application/x-www-form-urlencoded; charset=UTF-8\r\n";
+		$buf .="Content-length: ".strlen($u['query'])."\r\n";
+		$buf .="\r\n";
+		$buf .=$u['query'];
+
+		return $buf;
+	}
+}	
 ?>
