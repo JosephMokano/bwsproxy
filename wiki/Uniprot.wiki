@@ -1,5 +1,7 @@
 = Uniprot DAS  =
 
+http://www.ebi.ac.uk/uniprot-das/
+
 = How to use Uniprot DAS through the Biological Web Services Proxy =
 
 To use iHOP through the proxy the following parameters should be added to the proxy URL:
