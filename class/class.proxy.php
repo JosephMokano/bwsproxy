@@ -95,7 +95,7 @@
 			$strSQL = "DELETE FROM cache WHERE request='".$serialized."'";
 			$db->query($strSQL);
 			
-			$strSQL = "INSERT INTO cache SET service='".$param['service']."', request='".$serialized."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', mode=".$mode.", lastUpdate=".$currentTime;
+			$strSQL = "INSERT INTO cache SET service='".$param['bwsp_service']."', request='".$serialized."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', mode=".$mode.", lastUpdate=".$currentTime;
 			$db->query($strSQL);
 
 		}
