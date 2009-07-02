@@ -1,5 +1,7 @@
 = Ensembl DAS  =
 
+http://www.ensembl.org/info/data/ensembl_das.html
+
 = How to use the Ensembl DAS through the Biological Web Services Proxy =
 
 To use iHOP through the proxy the following parameters should be added to the proxy URL:
