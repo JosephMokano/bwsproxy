@@ -163,10 +163,11 @@
   	 */
   	function printResponse($format,$callback){
   		
-  		header('Content-type: application/json');
+  		
   		if ($format == 'row')
   			echo $this->rowResponse; 
   		else if ($format == 'json'){
+  			header('Content-type: application/json');
   			if ($callback)
   				echo $callback.'('.$this->jsonResponse.');';
   			else
