@@ -1,0 +1,49 @@
+= iHOP - Information Hyperlinked over Proteins  =
+
+For more information please read the paper:
+
+ *  A Gene Network for Navigating the Literature. Hoffmann, R., Valencia, A. Nature Genetics 36, 664 (2004)
+
+Or visit the iHOP web sites
+
+ * http://www.ihop-net.org/ 
+ * http://ubio.bioinfo.cnio.es/biotools/iHOP/ (web services description)
+
+= How to use Uniprot DAS through the Biological Web Services Proxy =
+
+To use iHOP through the proxy the following parameters should be added to the proxy URL:
+
+*bwsp_service* = Uniprot_DAS
+
+Name of the service
+
+*bwsp_response_format* = row | json
+
+Response format, could be the row xml format provided by the iHOP web service or JSON. 
+
+*bwsp_callback* = callback name
+
+If provided the response of the server is a JSONP function 
+
+*bwsp_cache* = 0 | 1 | 2 | 3 | 4 | 5
+
+Cache time
+
+ * 0) no cache
+ * 1) 1 hour
+ * 2) 1 day
+ * 3) 1 week
+ * 4) 1 month
+ * 5) 1 year
+
+*bwsp_rest* = Uniprot DAS url
+
+Uniprot DAS url. See the following examples
+
+= Examples =
+
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&bwsp_cache=4&bwsp_rest=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/types
+
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&bwsp_cache=4&bwsp_rest=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/features?segment=P04637
+
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&bwsp_cache=4&bwsp_rest=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/sequence?segment=P04637
