@@ -1,13 +1,4 @@
-= iHOP - Information Hyperlinked over Proteins  =
-
-For more information please read the paper:
-
- *  A Gene Network for Navigating the Literature. Hoffmann, R., Valencia, A. Nature Genetics 36, 664 (2004)
-
-Or visit the iHOP web sites
-
- * http://www.ihop-net.org/ 
- * http://ubio.bioinfo.cnio.es/biotools/iHOP/ (web services description)
+= Uniprot DAS  =
 
 = How to use Uniprot DAS through the Biological Web Services Proxy =
 
