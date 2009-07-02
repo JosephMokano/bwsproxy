@@ -32,8 +32,8 @@
 		if (!$u)
 			return false;
 		
-		//force GET DAS request
-		if (preg_match('/\/das\//',$param['bwsp_rest']))
+		//force GET DAS request for the uniprot DAS
+		if (preg_match('/\/das\/uniprot/',$param['bwsp_rest']))
 			$buf = $this->buildGET($u);
 		else
 			$buf = $this->buildPOST($u);
