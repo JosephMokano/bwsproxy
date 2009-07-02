@@ -14,7 +14,7 @@
 	define("EZSQL_DB_USER", "bwsp");			// <-- mysql db user
 	define("EZSQL_DB_PASSWORD", "bwsp");		// <-- mysql db password
 	define("EZSQL_DB_NAME", "bwsp");		// <-- mysql db pname
-	define("EZSQL_DB_HOST", "127.0.0.1");	// <-- mysql server host
+	define("EZSQL_DB_HOST", "jabba");	// <-- mysql server host
 			
 	// ==================================================================
 	//	ezSQL Constants
