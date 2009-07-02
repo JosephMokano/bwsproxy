@@ -25,7 +25,7 @@ Response format, could be the row xml format provided by the iHOP web service or
 
 If provided the response of the server is a JSONP function 
 
-*bwsp_cache* = 0|1|2|3|4|5
+*bwsp_cache* = 0 | 1 | 2 | 3 | 4 | 5
 
 Cache time
 
