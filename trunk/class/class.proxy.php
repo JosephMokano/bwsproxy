@@ -16,26 +16,7 @@
  	public $rowResponse		= ''; 
  	public $jsonResponse	= '';
  	
- 	/**
- 	 * serializeRequest function.
- 	 * 
- 	 * @access public
- 	 * @param mixed $request
- 	 * @return void
- 	 */
- 	function serializeRequest($request){
 
-		 $serialized = '';
-		 foreach ($request as $k=>$v){
-			 
-			 if (preg_match('/bwsp_/',$k) and !preg_match('/bwsp_callback/',$k) and !preg_match('/bwsp_service/',$k))
-			  	$serialized .= base64_encode($k.$v);
- 	
-		 }
-		 return md5($serialized); 	
-  	}
-  	
-  	
   	/**
   	 * getMaxTime function.
   	 * 
@@ -87,18 +68,8 @@
 		
 		global $db;
 		
-		$currentTime 	= time();
-		$mode			= $param['bwsp_cache'];
-		$serialized 	= $this->serializeRequest($param);
-		
-		if ($mode){
-			$strSQL = "DELETE FROM cache WHERE request='".$serialized."'";
-			$db->query($strSQL);
-			
-			$strSQL = "INSERT INTO cache SET service='".$param['bwsp_service']."', request='".$serialized."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', mode=".$mode.", lastUpdate=".$currentTime;
-			$db->query($strSQL);
-
-		}
+		if($service = $this->_saveService($param))
+			$this->_saveQuery($param,$service);
   	}
   	
   	/**
@@ -113,18 +84,18 @@
   		global $db;
 		
 		$currentTime 	= time();
-		$serialized 	= $this->serializeRequest($param);
+		$fingerprint 	= $this->serializeRequest($param);
 
-		$strSQL = "SELECT * FROM cache WHERE request='".$serialized."'";
+		$strSQL = "SELECT * FROM services s, queries q WHERE s.serviceid=q.serviceid AND q.fingerprint='".$fingerprint."'";
 		
 		$r = $db->get_row($strSQL);
 		
 		if ($r){
 			
-			if ($r->mode == 0)
+			if ($r->cache == 0)
 				return false;
 		
-			if ($r->lastUpdate >= $this->getMaxTime($currentTime,$r->mode)){
+			if ($r->unixtime >= $this->getMaxTime($currentTime,$r->cache)){
 				
 				$this->rowResponse = base64_decode($r->row);
 				$this->jsonResponse =  base64_decode($r->json);
@@ -133,7 +104,6 @@
 		}
 		return false;
   	}
-  	
   	
   	
   	/**
