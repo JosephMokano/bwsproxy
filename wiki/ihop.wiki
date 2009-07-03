@@ -37,8 +37,6 @@ http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/guessSymbolIdFromSymbolText?gene=P53&ncbiTaxId=10090
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/guessSymbolIdFromReference?reference=P87654
-
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolInfo?gene=P53&ncbiTaxId=9606
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolDefinitions?gene=BRCA1
