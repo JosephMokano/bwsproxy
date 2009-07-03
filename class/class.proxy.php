@@ -67,9 +67,9 @@
  	function saveCache($param){
 		
 		global $db;
-		
-		if($service = $this->_saveService($param))
+		if($service = $this->_saveService($param)){
 			$this->_saveQuery($param,$service);
+		}	
   	}
   	
   	/**
