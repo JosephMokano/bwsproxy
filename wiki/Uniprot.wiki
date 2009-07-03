@@ -24,8 +24,8 @@ Uniprot DAS url. See the following examples
 
 = Examples =
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&bwsp_cache=4&bwsp_rest=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/types
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&bwsp_rest=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/types
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&bwsp_cache=4&bwsp_rest=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/features?segment=P04637
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&&bwsp_rest=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/features?segment=P04637
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&bwsp_cache=4&bwsp_rest=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/sequence?segment=P04637
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&&bwsp_rest=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/sequence?segment=P04637
