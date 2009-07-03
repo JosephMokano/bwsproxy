@@ -25,11 +25,10 @@
  $format		= $_REQUEST['bwsp_response_format'];			// row|json
  $soap	 		= $_REQUEST['bwsp_soap'];						// soap call
  $restUrl 		= $_REQUEST['bwsp_rest'];						// rest call
- $cache			= $_REQUEST['bwsp_cache'];						// 0|1|2|3|4|5
  $callback		= $_REQUEST['bwsp_callback'];					// Callback function name
  
  
- if (!isset($service) or  !isset($format) or !isset($cache) or (!isset($soap) and !isset($restUrl))){
+ if (!isset($service) or  !isset($format) or (!isset($soap) and !isset($restUrl))){
  	//exit;
  }
 
