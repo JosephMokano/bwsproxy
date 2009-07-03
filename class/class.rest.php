@@ -78,9 +78,8 @@
 		else{
 			$strSQL = "SELECT serviceid FROM services WHERE name='".$name."' AND host='".$host."'";
 			$row = $db->get_row($strSQL);
-			return $row->servicesid;
+			return $row->serviceid;
 		}	
-
   	}
   	
   	/**
