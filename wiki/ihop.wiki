@@ -25,26 +25,26 @@ Response format, could be the row xml format provided by the iHOP web service or
 
 If provided the response of the server is a JSONP function 
 
-*bwsp_rest* = ihop url
+*bwsp_url* = ihop url
 
 iHOP web-service url. See the following examples
 
 = Examples =
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getRelatedSymbols?gene=P53
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getRelatedSymbols?gene=P53
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolsFromReference?reference=P38398
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolsFromReference?reference=P38398
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/guessSymbolIdFromSymbolText?gene=P53&ncbiTaxId=10090
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/guessSymbolIdFromSymbolText?gene=P53&ncbiTaxId=10090
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolInfo?gene=P53&ncbiTaxId=9606
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolInfo?gene=P53&ncbiTaxId=9606
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolDefinitions?gene=BRCA1
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolDefinitions?gene=BRCA1
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolInteractions?ihopid=32484
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getSymbolInteractions?ihopid=32484
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getLatestSymbolInformation?gene=BRCA3&ncbiTaxId=9606
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getLatestSymbolInformation?gene=BRCA3&ncbiTaxId=9606
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getPubMed?pmid=15657137
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getPubMed?pmid=15657137
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_rest=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getPubMed?ihoppmid=10533688
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ihop&bwsp_response_format=json&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getPubMed?ihoppmid=10533688
