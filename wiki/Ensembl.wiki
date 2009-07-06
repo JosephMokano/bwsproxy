@@ -18,16 +18,16 @@ Response format, could be the row xml format provided by the iHOP web service or
 
 If provided the response of the server is a JSONP function 
 
-*bwsp_rest* = Ensembl DAS url
+*bwsp_url* = Ensembl DAS url
 
 Ensembl DAS url. See the following examples
 
 = Examples =
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_rest=http://www.ensembl.org/das/dsn
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/dsn
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_rest=http://www.ensembl.org/das/sources
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/sources
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_rest=http://www.ensembl.org/das/Homo_sapiens.NCBI36.transcript/features?segment=13:31787617,31871806
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/Homo_sapiens.NCBI36.transcript/features?segment=13:31787617,31871806
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_rest=http://www.ensembl.org/das/Gallus_gallus.WASHUC1.reference/sequence?segment=1:1,1000
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/Gallus_gallus.WASHUC1.reference/sequence?segment=1:1,1000
