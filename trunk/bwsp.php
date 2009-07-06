@@ -19,24 +19,32 @@
  $debug 		= 1;
  $currentTime 	= time();
  $request		= '';
+
+ $proxy			= new Proxy;
  
  //proxy parameters
  $service 		= $_REQUEST['bwsp_service'];					// service name
  $format		= $_REQUEST['bwsp_response_format'];			// row|json
- $soap	 		= $_REQUEST['bwsp_soap'];						// soap call
- $restUrl 		= $_REQUEST['bwsp_rest'];						// rest call
+ $restUrl 		= $_REQUEST['bwsp_url'];						// service url
  $callback		= $_REQUEST['bwsp_callback'];					// Callback function name
  
  
  if (!isset($service) or  !isset($format) or (!isset($soap) and !isset($restUrl))){
  	//exit;
  }
-
- //calling a rest service (XML-RPC)
- if ($restUrl){
- 	 $rest 	= new Rest;
- 	 if ($rest->callService($_REQUEST))
+ 
+ $type = $proxy->getServiceType($_REQUEST);
+ 
+ //REST services 
+ if ($type == 'REST'){
+ 	
+ 	$rest = new Rest;
+ 	
+ 	if ($rest->callService($_REQUEST))
  		$rest->printResponse($format,$callback);
  }
+
+
+
 
 ?>
