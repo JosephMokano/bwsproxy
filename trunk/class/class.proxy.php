@@ -16,6 +16,122 @@
  	public $rowResponse		= ''; 
  	public $jsonResponse	= '';
  	
+ 	/**
+	 * parseRestUrl function.
+	 * 
+	 * @access public
+	 * @param mixed $param
+	 * @return void
+	 */
+	function _parseUrl($param){
+		  		
+  		$url = $param['bwsp_url'];
+		
+		if (!$url)
+			return false;
+		
+		$u = parse_url($url);
+		
+  		return $u;
+	}
+ 	
+ 	/**
+ 	 * serializeRequest function.
+ 	 * 
+ 	 * @access public
+ 	 * @param mixed $request
+ 	 * @return void
+ 	 */
+ 	function _serializeRequest($request){
+
+		 $fingerprint = '';
+		 foreach ($request as $k=>$v){
+			 
+			 if (preg_match('/bwsp_url/',$k) or preg_match('/bwsp_service/',$k))
+			  	$fingerprint .= base64_encode($k.$v);
+ 	
+		 }
+		 return md5($fingerprint); 	
+  	}
+  	
+  	
+  	/**
+  	 * getServiceType function.
+  	 * 
+  	 * @access public
+  	 * @param mixed $param
+  	 * @return void
+  	 */
+  	function getServiceType($param){
+	
+		global $db;
+		if (!$u = $this->_parseUrl($param))
+			return false;	
+			
+		$name 	= $param['bwsp_service'];
+		$host	= $u['host'];
+		
+		if (!$name or !$host)
+			return false;	
+
+		$strSQL = "SELECT t.type FROM services s, types t WHERE s.typeid=t.typeid AND s.name='".$name."' AND s.host='".$host."'";
+		$row = $db->get_row($strSQL);
+		return $row->type;
+
+  	}
+  	
+  	/**
+	 * _saveService function.
+	 * 
+	 * @access private
+	 * @param mixed $param
+	 * @return void
+	 */
+	function _saveService($param){
+	
+		global $db;
+		if (!$u = $this->_parseUrl($param))
+			return false;	
+			
+		$name 	= $param['bwsp_service'];
+		$host	= $u['host'];
+		
+		if (!$name or !$host)
+			return false;	
+		
+		$strSQL	= "INSERT IGNORE INTO services SET name='".$name."',host='".$host."',cache=0";
+		$db->query($strSQL);
+
+		if ($db->getLastId())
+			return $db->getLastId();
+		else{
+			$strSQL = "SELECT serviceid FROM services WHERE name='".$name."' AND host='".$host."'";
+			$row = $db->get_row($strSQL);
+			return $row->serviceid;
+		}	
+  	}
+  	
+  	/**
+  	 * _saveQuery function.
+  	 * 
+  	 * @access private
+  	 * @param mixed $param
+  	 * @param mixed $service
+  	 * @return void
+  	 */
+  	function _saveQuery($param,$service){
+	
+		global $db;
+
+		$currentTime 	= time();
+		$fingerprint 	= $this->_serializeRequest($param);
+		
+		$strSQL = "DELETE FROM queries WHERE fingerprint='".$fingerprint."'";
+		$db->query($strSQL);
+		
+		$strSQL = "INSERT INTO queries SET serviceid=".$service.", fingerprint='".$fingerprint."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', unixtime=".$currentTime;
+		$db->query($strSQL);
+  	}
 
   	/**
   	 * getMaxTime function.
@@ -84,7 +200,7 @@
   		global $db;
 		
 		$currentTime 	= time();
-		$fingerprint 	= $this->serializeRequest($param);
+		$fingerprint 	= $this->_serializeRequest($param);
 
 		$strSQL = "SELECT * FROM services s, queries q WHERE s.serviceid=q.serviceid AND q.fingerprint='".$fingerprint."'";
 		
