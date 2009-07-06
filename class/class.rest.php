@@ -13,98 +13,6 @@
  class Rest extends Proxy{
     
 	
-	/**
-	 * parseRestUrl function.
-	 * 
-	 * @access public
-	 * @param mixed $param
-	 * @return void
-	 */
-	function parseRestUrl($param){
-		  		
-  		$url = $param['bwsp_rest'];
-		
-		if (!$url)
-			return false;
-		
-		$u = parse_url($url);
-		
-  		return $u;
-	}
-	
-	/**
- 	 * serializeRequest function.
- 	 * 
- 	 * @access public
- 	 * @param mixed $request
- 	 * @return void
- 	 */
- 	function serializeRequest($request){
-
-		 $fingerprint = '';
-		 foreach ($request as $k=>$v){
-			 
-			 if (preg_match('/bwsp_rest/',$k))
-			  	$fingerprint .= base64_encode($k.$v);
- 	
-		 }
-		 return md5($fingerprint); 	
-  	}
-	
-	/**
-	 * _saveService function.
-	 * 
-	 * @access private
-	 * @param mixed $param
-	 * @return void
-	 */
-	function _saveService($param){
-	
-		global $db;
-		if (!$u = $this->parseRestUrl($param))
-			return false;	
-			
-		$name 	= $param['bwsp_service'];
-		$host	= $u['host'];
-		
-		if (!$name or !$host)
-			return false;	
-		
-		$strSQL	= "INSERT IGNORE INTO services SET name='".$name."',host='".$host."',cache=0";
-		$db->query($strSQL);
-
-		if ($db->getLastId())
-			return $db->getLastId();
-		else{
-			$strSQL = "SELECT serviceid FROM services WHERE name='".$name."' AND host='".$host."'";
-			$row = $db->get_row($strSQL);
-			return $row->serviceid;
-		}	
-  	}
-  	
-  	/**
-  	 * _saveQuery function.
-  	 * 
-  	 * @access private
-  	 * @param mixed $param
-  	 * @param mixed $service
-  	 * @return void
-  	 */
-  	function _saveQuery($param,$service){
-	
-		global $db;
-
-		$currentTime 	= time();
-		$fingerprint 	= $this->serializeRequest($param);
-		
-		$strSQL = "DELETE FROM queries WHERE fingerprint='".$fingerprint."'";
-		$db->query($strSQL);
-		
-		$strSQL = "INSERT INTO queries SET serviceid=".$service.", fingerprint='".$fingerprint."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', unixtime=".$currentTime;
-		$db->query($strSQL);
-  	}
-
-
     /**
      * getServiceResponse function.
      * 
@@ -114,11 +22,11 @@
      */
     function getServiceResponse($param){
 	
-		if (!$u = $this->parseRestUrl($param))
+		if (!$u = $this->_parseUrl($param))
 			return false;	
 		
 		//force GET DAS request for the uniprot DAS
-		if (preg_match('/\/das\/uniprot/',$param['bwsp_rest']))
+		if (preg_match('/\/das\/uniprot/',$param['bwsp_url']))
 			$buf = $this->buildGET($u);
 		else
 			$buf = $this->buildPOST($u);
