@@ -34,16 +34,16 @@ http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_respons
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/features/
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/dna?selection=PartName:firstbase,lastbase
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/dna/
 
 == Parts DAS ==
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/entry_points
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/entry_points/
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/features?segment=PartName
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/features/
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/dna?segment=PartName
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/dna/
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/features?segment=PartName:firstbase,lastbase
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/features/
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/dna?segment=PartName:firstbase,lastbase
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/dna/
