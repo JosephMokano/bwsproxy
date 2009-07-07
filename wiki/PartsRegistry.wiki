@@ -24,15 +24,15 @@ Parts Registry DAS url. See the following examples
 
 = Examples =
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/dsn
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/dsn/
 
 == Protein DAS==
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/entry_points
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/entry_points/
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/types
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/types/
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/features?selection=UniprotNumber
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/features/
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/dna?selection=PartName:firstbase,lastbase
 
