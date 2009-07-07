@@ -48,11 +48,13 @@
 		    //echo $line.'<br>';
 		    if ($line === false)
 		       break;
-		    if (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line))   
-		    	$content.= $line;   
+		    if (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line)){
+		    	if (!preg_match('/^</',$line))
+		    		$content = trim($content);
+		    	$content.= $line;   	
+		    }   
+		    	
  	    } while(true);
-	
-		//echo $content;
 	
 		fclose($fp);
 		
