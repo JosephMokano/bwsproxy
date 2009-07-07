@@ -157,8 +157,10 @@
 		$strSQL = "DELETE FROM queries WHERE fingerprint='".$fingerprint."'";
 		$db->query($strSQL);
 		
-		$strSQL = "INSERT INTO queries SET serviceid=".$service.", fingerprint='".$fingerprint."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', unixtime=".$currentTime;
+		if ($this->getServiceCache($param)){
+			$strSQL = "INSERT INTO queries SET serviceid=".$service.", fingerprint='".$fingerprint."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', unixtime=".$currentTime;
 		$db->query($strSQL);
+		}
   	}
 
   	/**
@@ -211,11 +213,10 @@
  	function saveCache($param){
 		
 		global $db;
-		if ($this->getServiceCache($param)){
-			if($service = $this->_saveService($param)){
-				$this->_saveQuery($param,$service);
-			}	
-		}
+		if($service = $this->_saveService($param)){
+			$this->_saveQuery($param,$service);
+		}	
+		
   	}
   	
   	/**
