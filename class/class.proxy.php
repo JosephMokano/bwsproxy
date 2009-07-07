@@ -231,10 +231,10 @@
   	 */
   	function callService($param){
   	
-  		if (!$this->getCache($param)){
+  		//if (!$this->getCache($param)){
   			$this->getServiceResponse($param);
-  			$this->saveCache($param);
-  		}
+  		//	$this->saveCache($param);
+  		//}
   		return true;
   	
   	}
