@@ -79,6 +79,34 @@
 		return $row->type;
 
   	}
+
+  	
+  	/**
+  	 * getServiceCache function.
+  	 * 
+  	 * @access public
+  	 * @param mixed $param
+  	 * @return void
+  	 */
+  	function getServiceCache($param){
+	
+		global $db;
+		if (!$u = $this->_parseUrl($param))
+			return false;	
+			
+		$name 	= $param['bwsp_service'];
+		$host	= $u['host'];
+		
+		if (!$name or !$host)
+			return false;	
+
+		$strSQL = "SELECT s.cache FROM services s WHERE s.name='".$name."' AND s.host='".$host."'";
+		$row = $db->get_row($strSQL);
+		return $row->cache;
+
+  	}
+
+
   	
   	/**
 	 * _saveService function.
@@ -183,9 +211,11 @@
  	function saveCache($param){
 		
 		global $db;
-		if($service = $this->_saveService($param)){
-			$this->_saveQuery($param,$service);
-		}	
+		if ($this->getServiceCache($param)){
+			if($service = $this->_saveService($param)){
+				$this->_saveQuery($param,$service);
+			}	
+		}
   	}
   	
   	/**
@@ -199,6 +229,9 @@
   	
   		global $db;
 		
+		if (!$this->getServiceCache($param))
+			return false;
+			
 		$currentTime 	= time();
 		$fingerprint 	= $this->_serializeRequest($param);
 
@@ -231,10 +264,10 @@
   	 */
   	function callService($param){
   	
-  		//if (!$this->getCache($param)){
+  		if (!$this->getCache($param)){
   			$this->getServiceResponse($param);
-  		//	$this->saveCache($param);
-  		//}
+  			$this->saveCache($param);
+  		}
   		return true;
   	
   	}
