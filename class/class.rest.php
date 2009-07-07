@@ -52,6 +52,8 @@
 		    	$content.= $line;   
  	    } while(true);
 	
+		//echo $content;
+	
 		fclose($fp);
 		
 		if (!$content)
