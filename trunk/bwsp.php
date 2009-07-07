@@ -15,6 +15,8 @@
  include_once('class/ez_sql.php');
  include_once('class/xml2json.php');
  
+ ini_set('auto_detect_line_endings', true);
+ 
  //initialization
  $debug 		= 1;
  $currentTime 	= time();
