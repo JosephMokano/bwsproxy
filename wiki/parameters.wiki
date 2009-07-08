@@ -1,0 +1,8 @@
+= Proxy Parameters =
+
+ * *bwsp_service* = Name of the service
+ * *bwsp_response_format* = row | json. Response format, could be the row xml format provided by the web service or JSON.
+ * *bwsp_callback* = callback name. If provided the response of the server is a JSONP function
+ * *bwsp_url* = Web-service request
+ * *bwsp_force_no_cache* = Force to empty the cache for this query. 
+
