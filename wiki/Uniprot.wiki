@@ -4,25 +4,9 @@ http://www.ebi.ac.uk/uniprot-das/
 
 = How to use Uniprot DAS through the Biological Web Services Proxy =
 
-To use Uniprot DAS through the proxy the following parameters should be added to the proxy URL:
+See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
-*bwsp_service* = Uniprot_DAS
-
-Name of the service
-
-*bwsp_response_format* = row | json
-
-Response format, could be the row xml format provided by the iHOP web service or JSON. 
-
-*bwsp_callback* = callback name
-
-If provided the response of the server is a JSONP function 
-
-*bwsp_url* = Uniprot DAS url
-
-Uniprot DAS url. See the following examples
-
-= Examples =
+== Examples ==
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&bwsp_url=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/types
 
