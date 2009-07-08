@@ -4,29 +4,13 @@ http://partsregistry.org/DAS_-_Distributed_Annotation_System
 
 = How to use the Parts Registry DAS through the Biological Web Services Proxy =
 
-To use Parts Registry DAS through the proxy the following parameters should be added to the proxy URL:
+See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
-*bwsp_service* = PartsRegistry_DAS
-
-Name of the service
-
-*bwsp_response_format* = row | json
-
-Response format, could be the row xml format provided by the iHOP web service or JSON. 
-
-*bwsp_callback* = callback name
-
-If provided the response of the server is a JSONP function 
-
-*bwsp_url* = Parts Registry DAS url
-
-Parts Registry DAS url. See the following examples
-
-= Examples =
+== Examples ==
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/dsn/
 
-== Protein DAS==
+=== Protein DAS===
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/entry_points/
 
@@ -36,7 +20,7 @@ http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_respons
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/dna/?segment=BBa_J45017
 
-== Parts DAS ==
+=== Parts DAS ===
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/parts/entry_points/
 
