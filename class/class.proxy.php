@@ -91,7 +91,7 @@
   	function getServiceCache($param){
 	
 		if ($param['bwsp_force_no_cache'])
-			return 0;
+			return false;
 	
 		global $db;
 		if (!$u = $this->_parseUrl($param))
