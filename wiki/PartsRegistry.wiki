@@ -16,7 +16,7 @@ http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_respons
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/types/
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/features?segment=BBa_J45017
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/features/?segment=Q8H6N2
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=partsRegistry_das&bwsp_response_format=json&bwsp_url=http://partsregistry.org/das/protein_annotations/dna/?segment=BBa_J45017
 
