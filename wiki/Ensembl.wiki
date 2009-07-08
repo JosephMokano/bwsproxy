@@ -3,26 +3,9 @@
 http://www.ensembl.org/info/data/ensembl_das.html
 
 = How to use the Ensembl DAS through the Biological Web Services Proxy =
+See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
-To use Ensembl DAS through the proxy the following parameters should be added to the proxy URL:
-
-*bwsp_service* = Ensembl_DAS
-
-Name of the service
-
-*bwsp_response_format* = row | json
-
-Response format, could be the row xml format provided by the iHOP web service or JSON. 
-
-*bwsp_callback* = callback name
-
-If provided the response of the server is a JSONP function 
-
-*bwsp_url* = Ensembl DAS url
-
-Ensembl DAS url. See the following examples
-
-= Examples =
+== Examples ==
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/dsn
 
