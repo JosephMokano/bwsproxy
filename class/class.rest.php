@@ -47,8 +47,8 @@
 		    $line = fgets($fp);
 		    //echo $line.'<br>';
 		    if ($line === false)
-		       break;
-		    if (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line)){
+		       break; 
+		    if (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or strlen($line) >40){
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
 		    	$content.= $line;   	
@@ -95,7 +95,7 @@
 	 */
 	function _buildGET($u){
 		
-		$buf  = "GET ".$u['path']." HTTP/1.1\r\n";
+		$buf  = "GET ".$u['path'].'?'.$u['query']." HTTP/1.1\r\n";
 		$buf .= "Host: ".$u['host']."\r\n";
 		$buf .= "Connection: Close\r\n\r\n";
 		
