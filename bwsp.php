@@ -14,7 +14,7 @@
  include_once('class/class.rest.php');
  include_once('class/ez_sql.php');
  include_once('class/xml2json.php');
- 
+  
  ini_set('auto_detect_line_endings', true);
  
  //initialization
@@ -27,27 +27,51 @@
  //proxy parameters
  $service 		= $_REQUEST['bwsp_service'];					// service name
  $format		= $_REQUEST['bwsp_response_format'];			// row|json
- $restUrl 		= $_REQUEST['bwsp_url'];						// service url
+ $serviceUrl	= $_REQUEST['bwsp_url'];						// service url
  $callback		= $_REQUEST['bwsp_callback'];					// Callback function name
  $forceNoCache	= $_REQUEST['bwsp_force_no_cache'];				// Empty cache for this query 
  
  
- if (!isset($service) or  !isset($format) or (!isset($soap) and !isset($restUrl))){
- 	//exit;
+ if (!isset($service) or  !isset($format)){
+ 	exit;
  }
  
  $type = $proxy->getServiceType($_REQUEST);
  
- //REST services 
- if ($type == 'REST'){
- 	
- 	$rest = new Rest;
- 	
- 	if ($rest->callService($_REQUEST))
- 		$rest->printResponse($format,$callback);
+ switch ($type){
+ 
+ 	//REST services
+ 	case 'REST':
+ 		
+ 		if (!isset($serviceUrl))
+ 			exit; 
+ 		$rest = new Rest;
+ 	 	if ($rest->callService($_REQUEST))
+ 			$rest->printResponse($format,$callback);
+ 		break;
+ 			
+ 	//EBI SOAP services		
+ 	case 'EBISOAP':
+ 		
+ 		switch($service){
+ 			
+ 			case 'ebiNcbiblast':
+ 				
+ 				include_once('class/class.ebi.ncbiblast.php');
+ 				$blast = new EbiNCBIblast;
+ 				if($blast->callService($_REQUEST))
+ 					$blast->printResponse($format,$callback);
+ 				break;	
+ 				
+ 		}
+ 		
+ 		
+ 				
  }
 
 
+
+ 
 
 
 ?>
