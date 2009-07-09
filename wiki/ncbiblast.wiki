@@ -1,0 +1,18 @@
+= NCBI BLAST  =
+
+http://www.ebi.ac.uk/Tools/webservices/services/ncbiblast
+
+= How to use NCBI BLAST through the Biological Web Services Proxy =
+
+In order to use the service the following [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters] are requiered.
+
+Aditional parameters specific for this service are:
+
+ * *async* (Default:  false)
+ * *progam* (Default: blastn)
+ * *database* (Default: embl)
+ * *sequence* (required)
+ 
+== Examples ==
+
+http://localhost/bwsproxy/bwsp.php?bwsp_service=ebiNcbiblast&bwsp_url=http://www.ebi.ac.uk/Tools/webservices/wsdl/WSNCBIBlast.wsdl&bwsp_response_format=row&sequence=koko
