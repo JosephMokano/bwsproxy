@@ -109,6 +109,43 @@
 
   	}
 
+	/**
+  	 * getMaxTime function.
+  	 * 
+  	 * @access public
+  	 * @param mixed $mode
+  	 * @return void
+  	 */
+  	function getMaxTime($currentTime,$mode){
+  		
+  		switch ($mode){
+			
+			case 0:
+				$maxTime = 0;											//no cache
+				break;													
+			case 1:
+				$maxTime = $currentTime - (60*60);						//1 hour
+				break;
+			
+			case 2:
+				$maxTime = $currentTime - (24*60*60);					//1 day
+				break;
+				
+			case 3:
+				$maxTime = $currentTime - (7*24*60*60);					//1 week
+				break;
+			
+			case 4:
+				$maxTime = $currentTime - (30*24*60*60);				//1 month
+				break;	
+				
+			case 5:
+				$maxTime = $currentTime - (365*24*60*60);				//1 year
+				break;	
+								
+		}
+		return $maxTime;
+  	}
 
   	
   	/**
@@ -166,45 +203,7 @@
 		}
   	}
 
-  	/**
-  	 * getMaxTime function.
-  	 * 
-  	 * @access public
-  	 * @param mixed $mode
-  	 * @return void
-  	 */
-  	function getMaxTime($currentTime,$mode){
-  		
-  		switch ($mode){
-			
-			case 0:
-				$maxTime = 0;											//no cache
-				break;													
-			case 1:
-				$maxTime = $currentTime - (60*60);						//1 hour
-				break;
-			
-			case 2:
-				$maxTime = $currentTime - (24*60*60);					//1 day
-				break;
-				
-			case 3:
-				$maxTime = $currentTime - (7*24*60*60);					//1 week
-				break;
-			
-			case 4:
-				$maxTime = $currentTime - (30*24*60*60);				//1 month
-				break;	
-				
-			case 5:
-				$maxTime = $currentTime - (365*24*60*60);				//1 year
-				break;	
-								
-		}
-		return $maxTime;
-  	}
- 	
-
+  
  	/**
  	 * saveCache function.
  	 * 
