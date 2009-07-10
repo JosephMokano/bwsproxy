@@ -1,0 +1,11 @@
+= EFetch  =
+
+http://www.ncbi.nlm.nih.gov/corehtml/query/static/efetchseq_help.html
+
+= How to use Efetch through the Biological Web Services Proxy =
+
+See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
+
+== Examples ==
+
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=efetch&bwsp_response_format=json&bwsp_url=http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=5
