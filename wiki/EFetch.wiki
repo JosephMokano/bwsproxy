@@ -6,13 +6,13 @@ http://www.ncbi.nlm.nih.gov/corehtml/query/static/efetchseq_help.html
 
 = How to use EfetchSeq through the Biological Web Services Proxy =
 
-See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
+In order to use the service the following [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters] are requiered.
 
 Aditional parameters specific for this service are:
 
-    * db (Default: genome)
-    * rettype (Default: native)
-    * id (required) 
+    * *db* (Default: genome)
+    * *rettype* (Default: native)
+    * *id* (required) 
 
 These parameters can be submited by GET or POST. 
 
