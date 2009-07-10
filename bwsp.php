@@ -13,6 +13,7 @@
  include_once('class/class.proxy.php');
  include_once('class/class.rest.php');
  include_once('class/ez_sql.php');
+ include_once('class/class.xmlserialize.php');
  include_once('class/xml2json.php');
   
  ini_set('auto_detect_line_endings', true);
@@ -35,7 +36,6 @@
  if (!isset($service) or  !isset($format)){
  	exit;
  }
- 
  $type = $proxy->getServiceType($_REQUEST);
  
  switch ($type){
@@ -64,6 +64,21 @@
  				break;	
  				
  		}
+ 		
+ 	//NCBI SOAP services		
+ 	case 'NCBISOAP':
+ 		
+ 		switch($service){
+ 			
+ 			case 'efetchSeq':
+ 				
+ 				include_once('class/class.ncbi.efetchseq.php');
+ 				$blast = new EfetchSeq;
+ 				if($blast->callService($_REQUEST))
+ 					$blast->printResponse($format,$callback);
+ 				break;	
+ 				
+ 		}	
  		
  		
  				
