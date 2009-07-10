@@ -46,8 +46,8 @@
 
 		 $fingerprint = '';
 		 foreach ($request as $k=>$v){
-			 
-			 if (preg_match('/bwsp_url/',$k) or preg_match('/bwsp_service/',$k))
+			 /* echo $k.': '.$v.'<br>'; */
+			 //if (preg_match('/bwsp_url/',$k) or preg_match('/bwsp_service/',$k))
 			  	$fingerprint .= base64_encode($k.$v);
  	
 		 }
