@@ -31,8 +31,6 @@
 		else
 			$buf = $this->_buildPOST($u);
 		
-		$buf = $this->_buildGET($u);
-		
 		$fp = @fsockopen ($u['host'], 80);
 		stream_set_timeout($fp, 10);
 	
@@ -45,7 +43,6 @@
 
 	    do {
 		    $line = fgets($fp);
-		    //echo $line.'<br>';
 		    if ($line === false)
 		       break; 
 		    if (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or strlen($line) >40){
@@ -82,7 +79,6 @@
 		$buf .= "Content-length: ".strlen($u['query'])."\r\n";
 		$buf .= "\r\n";
 		$buf .= $u['query'];
-		
 		return $buf;
 	}
 	
