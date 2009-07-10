@@ -74,7 +74,6 @@
  	function runNCBIBlast(){
 	
 		$jobid 	= $this->client->runNCBIBlast($this->parameters,$this->data);
-		//$res 	= $this->client->getResults($jobid);	
  		$res = $this->client->poll($jobid,'toolxml');
  		return $res;
  	}
