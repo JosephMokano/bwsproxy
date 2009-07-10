@@ -10,4 +10,4 @@ See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
 == Examples ==
 
-http://localhost/bwsproxy/bwsp.php?&bwsp_service=efetchSeq&bwsp_response_format=json&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_seq.wsdl?id=X82644
+http://localhost/bwsproxy/bwsp.php?&bwsp_service=efetchSeq&bwsp_response_format=json&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_seq.wsdl&id=X82644
