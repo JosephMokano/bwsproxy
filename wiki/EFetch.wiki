@@ -1,5 +1,6 @@
-= EFetch  =
+= EFetchSeq =
 
+http://www.ncbi.nlm.nih.gov/entrez/query/static/esoap_help.html
 http://www.ncbi.nlm.nih.gov/corehtml/query/static/efetchseq_help.html
 
 = How to use Efetch through the Biological Web Services Proxy =
