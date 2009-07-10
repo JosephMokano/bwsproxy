@@ -8,6 +8,14 @@ http://www.ncbi.nlm.nih.gov/corehtml/query/static/efetchseq_help.html
 
 See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
+Aditional parameters specific for this service are:
+
+    * db (Default: genome)
+    * rettype (Default: native)
+    * id (required) 
+
+These parameters can be submited by GET or POST. 
+
 == Examples ==
 
 http://localhost/bwsproxy/bwsp.php?&bwsp_service=efetchSeq&bwsp_response_format=json&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_seq.wsdl&id=X82644
