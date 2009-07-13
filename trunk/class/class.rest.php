@@ -40,17 +40,19 @@
 		fputs($fp, $buf);
 
 		$content = "";
-
+		$start = false;
 	    do {
 		    $line = fgets($fp);
 		    if ($line === false)
-		       break; 
-		    if (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or strlen($line) >40){
+		       break;  
+		    if (preg_match('/xml/',$line))
+		    	$start = true;   
+		    if ($start and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or strlen($line) >40) ){
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
 		    	$content.= $line;   	
 		    }   
-		    	
+		    $first = false;	
  	    } while(true);
 	
 		fclose($fp);
