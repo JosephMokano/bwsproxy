@@ -200,7 +200,7 @@
 		
 		if ($this->getServiceCache($param)){
 			$strSQL = "INSERT INTO queries SET serviceid=".$service.", fingerprint='".$fingerprint."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', unixtime=".$currentTime;
-		$db->query($strSQL);
+			$db->query($strSQL);
 		}
   	}
 
