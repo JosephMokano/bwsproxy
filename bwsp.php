@@ -78,15 +78,8 @@
  					$blast->printResponse($format,$callback);
  				break;	
  				
- 		}	
- 		
- 		
+ 		}	 		
  				
  }
-
-
-
- 
-
 
 ?>
