@@ -61,7 +61,7 @@
 			return false;
 
 		$this->rowResponse 	= $content;
-		$this->jsonResponse = xml2json::transformXmlStringToJson($this->rowResponse);
+		$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rowResponse));
 		return true;
 	}
 
