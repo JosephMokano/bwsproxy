@@ -47,7 +47,7 @@
 		 $fingerprint = '';
 		 foreach ($request as $k=>$v){
 			 /* echo $k.': '.$v.'<br>'; */
-			 if (!preg_match('/bwsp_response_format/',$k) and !preg_match('/bwsp_callback/',$k))
+			 if (!preg_match('/bwsp_response_format/',$k) and !preg_match('/bwsp_callback/',$k) and $k != '_' )
 			  	$fingerprint .= base64_encode($k.$v);
  	
 		 }
