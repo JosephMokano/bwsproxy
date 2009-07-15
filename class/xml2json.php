@@ -33,7 +33,7 @@ define ("MAX_RECURSION_DEPTH_ALLOWED", 25);
 // An empty string
 define ("EMPTY_STR", "");
 // SimpleXMLElement object property name for attributes
-define ("SIMPLE_XML_ELEMENT_OBJECT_PROPERTY_FOR_ATTRIBUTES", "@attributes");
+define ("SIMPLE_XML_ELEMENT_OBJECT_PROPERTY_FOR_ATTRIBUTES", "attributes");
 // SimpleXMLElement object name.
 define ("SIMPLE_XML_ELEMENT_PHP_CLASS", "SimpleXMLElement");
 
