@@ -288,8 +288,9 @@
   		
   		
   		if ($format == 'row'){
-  			echo $this->rowResponse;
   			header('Content-type: text/xml'); 
+  			echo $this->rowResponse;
+  			
   		}else if ($format == 'json'){
   			//header('Content-type: application/json');
   			if ($callback)
