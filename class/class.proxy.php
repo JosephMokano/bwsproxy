@@ -297,6 +297,12 @@
   				echo $callback.'('.$this->jsonResponse.');';
   			else
   				echo $this->jsonResponse;	
+  		 }else if ($format == 'capsule'){
+  			//header('Content-type: application/json');
+  			if ($callback)
+  				echo $callback.'({"response":"'.base64_encode($this->jsonResponse).'"});';
+  			else
+  				echo '{"response":"'.base64_encode($this->jsonResponse).'"}';	
   		}	
   	}
  	
