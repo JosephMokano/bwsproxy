@@ -27,7 +27,7 @@
  
  //proxy parameters
  $service 		= $_REQUEST['bwsp_service'];					// service name
- $format		= $_REQUEST['bwsp_response_format'];			// row|json
+ $format		= $_REQUEST['bwsp_response_format'];			// row|json|capsule
  $serviceUrl	= $_REQUEST['bwsp_url'];						// service url
  $callback		= $_REQUEST['bwsp_callback'];					// Callback function name
  $forceNoCache	= $_REQUEST['bwsp_force_no_cache'];				// Empty cache for this query 
