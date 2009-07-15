@@ -300,9 +300,9 @@
   		 }else if ($format == 'capsule'){
   			//header('Content-type: application/json');
   			if ($callback)
-  				echo $callback.'({"response":"'.base64_encode($this->jsonResponse).'"});';
+  				echo $callback.'({"response":"'.base64_encode($this->rowResponse).'"});';
   			else
-  				echo '{"response":"'.base64_encode($this->jsonResponse).'"}';	
+  				echo '{"response":"'.base64_encode($this->rowResponse).'"}';	
   		}	
   	}
  	
