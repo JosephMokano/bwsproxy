@@ -26,7 +26,7 @@
 	function _parseUrl($param){
 		  		
   		$url = str_replace(',','&',$param['bwsp_url']);
-		
+
 		if (!$url)
 			return false;
 		
@@ -74,7 +74,6 @@
 		if (!$name or !$host)
 			return false;	
 			
-
 		$strSQL = "SELECT t.type FROM services s, types t WHERE s.typeid=t.typeid AND s.name='".$name."' AND s.host='".$host."'";
 		$row = $db->get_row($strSQL);
 		return $row->type;
