@@ -25,7 +25,7 @@
 	 */
 	function _parseUrl($param){
 		  		
-  		$url = $param['bwsp_url'];
+  		$url = str_replace(',','&',$param['bwsp_url']);
 		
 		if (!$url)
 			return false;
