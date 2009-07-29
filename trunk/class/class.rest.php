@@ -21,12 +21,12 @@
      * @return void
      */
     function getServiceResponse($param){
-    
+
 		if (!$u = $this->_parseUrl($param))
 			return false;	
 		
 		//force GET DAS request for the uniprot DAS
-		if (preg_match('/\/das\/uniprot/',$param['bwsp_url']) or preg_match('/partsregistry.org\/das/',$param['bwsp_url']))
+		if (preg_match('/\/das\/uniprot/',$param['bwsp_url']) or preg_match('/partsregistry.org\/das/',$param['bwsp_url']) or preg_match('/madas/',$param['bwsp_url']))
 			$buf = $this->_buildGET($u);
 		else
 			$buf = $this->_buildPOST($u);
@@ -96,7 +96,6 @@
 		$buf  = "GET ".$u['path'].'?'.$u['query']." HTTP/1.1\r\n";
 		$buf .= "Host: ".$u['host']."\r\n";
 		$buf .= "Connection: Close\r\n\r\n";
-		
 		return $buf;
 
 	}
