@@ -1,13 +1,13 @@
-#summary One-sentence summary of this page.
+= FragKB: Structural and Literature Annotation Resource of Conserved Peptide Fragments and Residues   =
 
-= Introduction =
+For more information please visit the FragKB web site
 
-Add your content here.
+ * http://ubio.bioinfo.cnio.es/biotools/FragKB/
 
+= How to use FragKB through the Biological Web Services Proxy =
 
-= Details =
+See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Examples ==
+
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=fragkb&bwsp_response_format=json&bwsp_url=
