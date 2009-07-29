@@ -31,8 +31,7 @@
  $serviceUrl	= $_REQUEST['bwsp_url'];						// service url
  $callback		= $_REQUEST['bwsp_callback'];					// Callback function name
  $forceNoCache	= $_REQUEST['bwsp_force_no_cache'];				// Empty cache for this query 
- 
- 
+  
  if (!isset($service) or  !isset($format)){
  	exit;
  }
