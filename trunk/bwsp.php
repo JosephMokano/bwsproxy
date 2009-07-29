@@ -36,7 +36,6 @@
  	exit;
  }
  $type = $proxy->getServiceType($_REQUEST);
- 
  switch ($type){
  
  	//REST services
