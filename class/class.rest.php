@@ -42,7 +42,6 @@
 		$start = false;
 	    do {
 		    $line = fgets($fp);
-		    echo 'test'.$line.'<br>';
 		    if ($line === false)
 		       break;  
 		    if (preg_match('/xml/',$line))
@@ -54,7 +53,7 @@
 		    }   
 		    $first = false;	
  	    } while(true);
-	
+		echo $content;
 		fclose($fp);
 		
 		if (!$content)
