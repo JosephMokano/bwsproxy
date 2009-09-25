@@ -53,7 +53,6 @@
 		    }   
 		    $first = false;	
  	    } while(true);
-		echo $content;
 		fclose($fp);
 		
 		if (!$content)
