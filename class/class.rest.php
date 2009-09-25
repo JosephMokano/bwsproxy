@@ -36,13 +36,13 @@
 	
 		if (!$fp)
 			return false;
-		echo 'test'.$fp;
 		fputs($fp, $buf);
 
 		$content = "";
 		$start = false;
 	    do {
 		    $line = fgets($fp);
+		    echo 'test'.$line.'<br>';
 		    if ($line === false)
 		       break;  
 		    if (preg_match('/xml/',$line))
