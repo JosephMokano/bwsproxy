@@ -36,7 +36,7 @@
 	
 		if (!$fp)
 			return false;
-
+		echo 'test'.$fp;
 		fputs($fp, $buf);
 
 		$content = "";
