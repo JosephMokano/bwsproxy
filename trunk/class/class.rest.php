@@ -96,7 +96,7 @@
 		$buf  = "GET ".$u['path'].'?'.$u['query']." HTTP/1.1\r\n";
 		$buf .= "Host: ".$u['host']."\r\n";
 		$buf .= "Connection: Close\r\n\r\n";
-		echo $buf;
+		//echo $buf;
 		return $buf;
 
 	}
