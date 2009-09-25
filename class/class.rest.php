@@ -32,7 +32,7 @@
 			$buf = $this->_buildPOST($u);
 		
 		$fp = @fsockopen ($u['host'], 80);
-		stream_set_timeout($fp, 10);
+		stream_set_timeout($fp, 100);
 	
 		if (!$fp)
 			return false;
@@ -43,7 +43,6 @@
 		$start = false;
 	    do {
 		    $line = fgets($fp);
-		    echo $line.'<br>';
 		    if ($line === false)
 		       break;  
 		    if (preg_match('/xml/',$line))
