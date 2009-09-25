@@ -56,7 +56,7 @@
  	    } while(true);
 	
 		fclose($fp);
-		
+		echo $content;
 		if (!$content)
 			return false;
 
