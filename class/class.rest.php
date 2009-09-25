@@ -26,7 +26,7 @@
 			return false;	
 		
 		//force GET DAS request for the uniprot DAS
-		if (preg_match('/\/das\/uniprot/',$param['bwsp_url']) or preg_match('/partsregistry.org\/das/',$param['bwsp_url']) or preg_match('/madas/',$param['bwsp_url']))
+		if (preg_match('/\/das\/uniprot/',$param['bwsp_url']) or preg_match('/partsregistry.org\/das/',$param['bwsp_url']) or preg_match('/madas/',$param['bwsp_url'])  or preg_match('/ws.bioinfo.cnio.es/',$param['bwsp_url']))
 			$buf = $this->_buildGET($u);
 		else
 			$buf = $this->_buildPOST($u);
