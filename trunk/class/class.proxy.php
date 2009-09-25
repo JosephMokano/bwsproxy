@@ -197,7 +197,7 @@
 		$strSQL = "DELETE FROM queries WHERE fingerprint='".$fingerprint."'";
 		$db->query($strSQL);
 		
-		if ($this->getServiceCache($param)){
+		if ($this->getServiceCache($param) and $this->rowResponse and $this->jsonResponse){
 			$strSQL = "INSERT INTO queries SET serviceid=".$service.", fingerprint='".$fingerprint."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', unixtime=".$currentTime;
 			$db->query($strSQL);
 		}
