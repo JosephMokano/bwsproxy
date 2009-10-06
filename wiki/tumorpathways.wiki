@@ -1,13 +1,10 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
+= Tumor types and Pathways  =
 
 
-= Details =
+= How to use Tumor types and Pathways through the Biological Web Services Proxy =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+In order to use the service the following [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters] are requiered.
+
+== Examples ==
+
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=tumor-pathways&bwsp_response_format=json&bwsp_url=http://ws.bioinfo.cnio.es/rest/diseases/interactions/tab2graphml.php
