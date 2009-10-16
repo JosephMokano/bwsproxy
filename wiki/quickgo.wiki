@@ -7,7 +7,7 @@ In order to use the service the following [http://code.google.com/p/bwsproxy/wik
 
 Aditional parameters specific for this service are:
 
- * *id* (required)
+ * *id* (GO term, required)
  * *format* (required)
 
 These parameters can be submited by GET or POST. 
