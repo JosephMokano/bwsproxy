@@ -101,6 +101,7 @@
 	
 	function _clearExceptions($c){
 		$c = str_replace('->',' TO ',$c);
+		$c = str_replace('"category','" category',$c);
 		
 		return $c;
 	}
