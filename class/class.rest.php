@@ -58,7 +58,7 @@
 		if (!$content)
 			return false;
 
-		$this->rowResponse 	= $content;
+		$this->rowResponse 	= _clearExceptions($content);
 		$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rowResponse));
 		return true;
 	}
@@ -97,6 +97,11 @@
 		//echo $buf;
 		return $buf;
 
+	}
+	
+	function _clearExceptions($c){
+		$c = str_replace('->',' TO ',$c);
+		return $c;
 	}
 }	
 ?>
