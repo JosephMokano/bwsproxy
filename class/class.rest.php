@@ -58,7 +58,7 @@
 		if (!$content)
 			return false;
 
-		$this->rowResponse 	= _clearExceptions($content);
+		$this->rowResponse 	= $this->_clearExceptions($content);
 		$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rowResponse));
 		return true;
 	}
