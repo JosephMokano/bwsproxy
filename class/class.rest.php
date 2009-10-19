@@ -101,6 +101,7 @@
 	
 	function _clearExceptions($c){
 		$c = str_replace('->',' TO ',$c);
+		
 		return $c;
 	}
 }	
