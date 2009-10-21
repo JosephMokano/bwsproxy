@@ -5,6 +5,7 @@ For more information please visit the PFAM web site:
 
 
  * [http://pfam.sanger.ac.uk/ http://pfam.sanger.ac.uk/]
+ * [http://pfam.sanger.ac.uk/help#tabview=tab10 Web services]
 
 = How to use PFAM web service through the Biological Web Services Proxy =
 
