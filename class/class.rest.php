@@ -46,7 +46,7 @@
 		       break;  
 		    if (preg_match('/xml/',$line))
 		    	$start = true;   
-		    if ($start and !preg_match('/<!--*-->/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or strlen($line) >40) ){
+		    if ($start and !preg_match('/<!--/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or strlen($line) >40) ){
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
 		    	$content.= $line;   	
