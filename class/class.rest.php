@@ -102,7 +102,7 @@
 	function _clearExceptions($c){
 		$c = str_replace('->',' TO ',$c);
 		$c = str_replace('"category','" category',$c);
-		$c = str_replace('/<!--*?-->/m','" category',$c);
+		$c = str_replace('/<!--*?-->/m','',$c);
 		
 		return $c;
 	}
