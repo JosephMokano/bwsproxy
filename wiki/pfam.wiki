@@ -13,4 +13,4 @@ See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
 == Examples ==
 
-bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getPubMed?ihoppmid=10533688
+===Pfam ID/accession conversion===
