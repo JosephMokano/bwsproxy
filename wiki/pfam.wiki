@@ -14,3 +14,5 @@ See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 == Examples ==
 
 ===Pfam ID/accession conversion===
+
+[http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/family/acc?id=Piwi;output=xml http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/family/acc?id=Piwi;output=xml]
