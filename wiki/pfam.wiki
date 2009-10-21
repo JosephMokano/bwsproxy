@@ -31,3 +31,8 @@ See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 [http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/family?output=xml&acc=PF02171 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/family?output=xml;acc=PF02171]
 
 [http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/family?entry=Piwi;output=xml http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/family?entry=Piwi;output=xml]
+
+===Protein sequence data===
+
+
+[http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/protein?id=CANX_CHICK;output=xml http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/protein?id=CANX_CHICK;output=xml]
