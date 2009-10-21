@@ -1,3 +1,4 @@
+#labels protein,domain,annotation,database
 = PFAM =
 
 For more information please visit the PFAM web site:
