@@ -1,3 +1,4 @@
+#labels text-mining
 = iHOP - Information Hyperlinked over Proteins  =
 
 For more information please read the paper:
