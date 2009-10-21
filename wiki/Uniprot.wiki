@@ -1,4 +1,4 @@
-#labels protein,annotations
+#labels protein
 = Uniprot DAS  =
 
 http://www.ebi.ac.uk/uniprot-das/
