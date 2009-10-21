@@ -1,3 +1,4 @@
+#labels sequence,similarity
 = NCBI BLAST  =
 
 http://www.ebi.ac.uk/Tools/webservices/services/ncbiblast
