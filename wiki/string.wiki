@@ -9,6 +9,8 @@ For more information please visit the STRING web site:
 
 See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
+Check the [http://string.embl.de/newstring_cgi/show_info_page.pl?UserId=KpZ1yZDrtXZg&sessionId=fdYBJ54WHG6p String API] to see the String paramaters description.
+
 == Examples ==
 
 ===Interaction network in PSI-MI 2.5 ===
