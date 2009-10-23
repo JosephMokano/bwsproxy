@@ -1,4 +1,4 @@
-#labels protein,interactions
+#labels protein,interaction
 = STRING =
 
 For more information please visit the STRING web site:
@@ -14,4 +14,3 @@ See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 ===Pfam ID/accession conversion===
 
 [http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/family/acc?id=Piwi;output=xml http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=pfam&bwsp_response_format=row&bwsp_url=http://pfam.sanger.ac.uk/family/acc?id=Piwi;output=xml]
-
