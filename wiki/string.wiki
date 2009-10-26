@@ -15,4 +15,4 @@ Check the [http://string.embl.de/newstring_cgi/show_info_page.pl?UserId=KpZ1yZDr
 
 ===Interaction network in PSI-MI 2.5 ===
 
-[http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=string&bwsp_response_format=raw&bwsp_url=http://string-db.org/api/psi-mi/interactions?identifier=4932.YML115C,required_score=900 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=string&bwsp_response_format=row&bwsp_url=http://string-db.org/api/psi-mi/interactions?identifier=4932.YML115C,required_score=900]
+[http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=string&bwsp_response_format=raw&bwsp_url=http://string-db.org/api/psi-mi/interactions?identifier=4932.YML115C,required_score=900 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=string&bwsp_response_format=raw&bwsp_url=http://string-db.org/api/psi-mi/interactions?identifier=4932.YML115C,required_score=900]
