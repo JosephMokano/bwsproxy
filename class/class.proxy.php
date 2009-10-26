@@ -13,7 +13,7 @@
  class Proxy {
   
  	public $error 			= 0;
- 	public $rowResponse		= ''; 
+ 	public $rawResponse		= ''; 
  	public $jsonResponse	= '';
  	
  	/**
@@ -197,8 +197,8 @@
 		$strSQL = "DELETE FROM queries WHERE fingerprint='".$fingerprint."'";
 		$db->query($strSQL);
 		
-		if ($this->getServiceCache($param) and $this->rowResponse and $this->jsonResponse){
-			$strSQL = "INSERT INTO queries SET serviceid=".$service.", fingerprint='".$fingerprint."', row='".base64_encode($this->rowResponse)."', json='".base64_encode($this->jsonResponse)."', unixtime=".$currentTime;
+		if ($this->getServiceCache($param) and $this->rawResponse and $this->jsonResponse){
+			$strSQL = "INSERT INTO queries SET serviceid=".$service.", fingerprint='".$fingerprint."', row='".base64_encode($this->rawResponse)."', json='".base64_encode($this->jsonResponse)."', unixtime=".$currentTime;
 			$db->query($strSQL);
 		}
   	}
@@ -249,7 +249,7 @@
 		
 			if ($r->unixtime >= $this->getMaxTime($currentTime,$r->cache)){
 				
-				$this->rowResponse = base64_decode($r->row);
+				$this->rawResponse = base64_decode($r->row);
 				$this->jsonResponse =  base64_decode($r->json);
 				return true;
 			}
@@ -286,9 +286,9 @@
   	function printResponse($format,$callback){
   		
   		
-  		if ($format == 'row'){
+  		if ($format == 'raw'){
   			header('Content-type: text/xml'); 
-  			echo $this->rowResponse;
+  			echo $this->rawResponse;
   			
   		}else if ($format == 'json'){
   			//header('Content-type: application/json');
@@ -299,9 +299,9 @@
   		 }else if ($format == 'capsule'){
   			//header('Content-type: application/json');
   			if ($callback)
-  				echo $callback.'({"response":"'.base64_encode($this->rowResponse).'"});';
+  				echo $callback.'({"response":"'.base64_encode($this->rawResponse).'"});';
   			else
-  				echo '{"response":"'.base64_encode($this->rowResponse).'"}';	
+  				echo '{"response":"'.base64_encode($this->rawResponse).'"}';	
   		}	
   	}
  	
