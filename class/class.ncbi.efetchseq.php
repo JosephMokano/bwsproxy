@@ -72,8 +72,8 @@
  	 	
  	 	if ($this->setParameters($param)){
  	 		$content = $this->runEfetchSeq();
- 	 		$this->rowResponse 	= $content;
-			$this->jsonResponse = xml2json::transformXmlStringToJson($this->rowResponse);
+ 	 		$this->rawResponse 	= $content;
+			$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
 			return true;
  	 		
 	 	}else
