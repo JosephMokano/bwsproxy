@@ -38,7 +38,7 @@
  	
  		$async 		= ($param['async'])?$param['async']:0;
  		$email		= ($param['email'])?$param['email']:'vdelatorre@cnio.es';
- 		$program	= ($param['progam'])?$param['progam']:'blastn';
+ 		$program	= ($param['program'])?$param['program']:'blastn';
  		$database	= ($param['database'])?$param['database']:'embl';
  	
  		$this->parameters = array('async' => $async,'email' => $email, 'program' => $program,'database' => $database);
