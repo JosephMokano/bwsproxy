@@ -50,7 +50,7 @@
 		    	$start = false;
 		     if (preg_match('/-->/',$line))
 		    	$start = true;		   
-		    if ($start and !preg_match('/<!--/',$line) and !preg_match('/-->/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or ( strlen($line) >40 and !preg_match('/Content-Type/',$line)) ) ){
+		    if ($start and !preg_match('/<!--/',$line) and !preg_match('/-->/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or ( strlen($line) >40 and !preg_match('/Content-Type/',$line) and !preg_match('/Last-Modified/',$line)) ) ){
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
 		    	$content.= $line;  
