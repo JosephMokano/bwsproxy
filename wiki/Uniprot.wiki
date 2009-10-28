@@ -9,8 +9,8 @@ See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
 == Examples ==
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&bwsp_url=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/types
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=raw&bwsp_url=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/types
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&&bwsp_url=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/features?segment=P04637
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=raw&&bwsp_url=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/features?segment=P04637
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=json&&bwsp_url=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/sequence?segment=P04637
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=uniprot_das&bwsp_response_format=raw&&bwsp_url=http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot/sequence?segment=P04637
