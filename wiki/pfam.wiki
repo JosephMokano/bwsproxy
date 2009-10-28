@@ -1,6 +1,8 @@
 #labels protein,domain,database
 = PFAM =
 
+=WARNING PFAM is changing the specification, this service will be available soon!!!=
+
 For more information please visit the PFAM web site:
 
 
