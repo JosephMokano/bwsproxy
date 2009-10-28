@@ -50,7 +50,7 @@
 		    	$start = false;
 		     if (preg_match('/-->/',$line))
 		    	$start = true;		   
-		    if ($start and !preg_match('/<!--/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or ( strlen($line) >40 and !preg_match('/Content-Type/',$line)) ) ){
+		    if ($start and !preg_match('/<!--/',$line) and !preg_match('/-->/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or ( strlen($line) >40 and !preg_match('/Content-Type/',$line)) ) ){
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
 		    	$content.= $line;  
@@ -63,7 +63,6 @@
 			return false;
 
 		$this->rawResponse 	= $this->_clearExceptions($content);
-		echo $this->rawResponse; 
 		$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rawResponse));
 		return true;
 	}
