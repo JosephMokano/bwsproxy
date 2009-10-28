@@ -15,4 +15,4 @@ These parameters can be submited by GET or POST.
  
 == Examples ==
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ssynonyms&bwsp_response_format=json&bwsp_url=http://ws.bioinfo.cnio.es/rest/ssynonyms/index.php?sequence=ATGAAAACTCCCGAAGACTGCACCGGCCTGGCGGACATCCGCGAGGCCATCGACCGGAT
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ssynonyms&bwsp_response_format=raw&bwsp_url=http://ws.bioinfo.cnio.es/rest/ssynonyms/index.php?sequence=ATGAAAACTCCCGAAGACTGCACCGGCCTGGCGGACATCCGCGAGGCCATCGACCGGAT
