@@ -54,7 +54,6 @@
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
 		    	$content.= $line;  
-		    	echo $line.'<br>'; 	
 		    }   
 		    $first = false;	
  	    } while(true);
@@ -64,6 +63,7 @@
 			return false;
 
 		$this->rawResponse 	= $this->_clearExceptions($content);
+		echo $content;
 		$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rawResponse));
 		return true;
 	}
