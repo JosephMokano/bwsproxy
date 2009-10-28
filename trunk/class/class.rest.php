@@ -53,7 +53,8 @@
 		    if ($start and !preg_match('/<!--/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or ( strlen($line) >40 and !preg_match('/Content-Type/',$line)) ) ){
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
-		    	$content.= $line;   	
+		    	$content.= $line;  
+		    	echo $line.'<br>'; 	
 		    }   
 		    $first = false;	
  	    } while(true);
