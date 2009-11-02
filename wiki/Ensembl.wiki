@@ -19,4 +19,7 @@ http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_form
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/Gallus_gallus.WASHUC1.reference/sequence?segment=1:1,1000
 
 === Bacterial Ensembl ===
+
+=== Examples ===
+
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=raw&bwsp_url=http://bacterial.ensembl.org/das/dsn
