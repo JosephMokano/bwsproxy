@@ -22,4 +22,4 @@ http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_form
 
 === Examples ===
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=raw&bwsp_url=http://bacterial.ensembl.org/das/dsn
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=raw&bwsp_url=http://bacteria.ensembl.org/das/sources
