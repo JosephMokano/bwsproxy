@@ -1,13 +1,17 @@
-#summary One-sentence summary of this page.
+= Genome Statistics  =
 
-= Introduction =
+Retrieve several genome statistics using [BioMart http://www.biomart.org/]
 
-Add your content here.
+= How to use Sequence Synonyms through the Biological Web Services Proxy =
 
+In order to use the service the following [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters] are requiered.
 
-= Details =
+Aditional parameters specific for this service are:
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+ * *genome* (required)
+
+These parameters can be submited by GET or POST. 
+ 
+== Examples ==
+
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=genomestatistics&bwsp_response_format=raw&bwsp_url=http://ws.bioinfo.cnio.es/rest/genomestatistics/index.php?genome=esc_18_gene
