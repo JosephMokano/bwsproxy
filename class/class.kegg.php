@@ -51,7 +51,7 @@
 		print "Response: \n".
 		$this->client->__getLastResponse()."\n"; 
 */
-		return '<response>'.$res.'</response>';
+		return '<response>'.trim($res).'</response>';
 	}
 	
  	/**
