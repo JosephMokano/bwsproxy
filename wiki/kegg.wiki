@@ -13,3 +13,6 @@ These parameters can be submited by GET or POST.
 
  === bconv ===
  * http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=bconv&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp&database=uniprot&id=P04637
+
+ === get_pathways_by_genes ===
+ * http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=get_pathways_by_genes&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp&genes=hsa:7157
