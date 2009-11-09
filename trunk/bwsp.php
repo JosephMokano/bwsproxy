@@ -62,6 +62,7 @@
  				break;	
  				
  		}
+ 		break;
  		
  	//NCBI SOAP services		
  	case 'NCBISOAP':
@@ -76,7 +77,18 @@
  					$blast->printResponse($format,$callback);
  				break;	
  				
- 		}	 		
+ 		}
+ 		break;
+ 	
+ 	//KEGG SOAP services		
+ 	case 'KEGGSOAP':
+ 		
+ 		include_once('class/class.kegg.php');
+ 		$kegg = new Kegg;
+ 		if($kegg->callService($_REQUEST)){
+ 				$kegg->printResponse($format,$callback);
+ 		}		
+	 	break;	
  				
  }
 
