@@ -11,4 +11,5 @@ These parameters can be submited by GET or POST.
  
 == Examples ==
 
- * bconv http://ubio.bioinfo.cnio.es/bwsproxy/bwsp.php?bwsp_service=bconv&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp&database=uniprot&id=P04637
+ === bconv ===
+ * http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=bconv&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp&database=uniprot&id=P04637
