@@ -287,7 +287,7 @@
   		
   		
   		if ($format == 'raw'){
-  			//header('Content-type: text/xml'); 
+  			header('Content-type: text/xml'); 
   			echo $this->rawResponse;
   			
   		}else if ($format == 'json'){
