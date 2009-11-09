@@ -40,7 +40,21 @@
 		}catch (SoapFault $fault){
 			 trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 		}
-		//debug
+
+		return '<response>'.trim($res).'</response>';
+	}
+	
+	
+	function get_pathways_by_genes($genes){
+	
+		try {
+			$param = new SoapParam($genes,"string");
+			$res = $this->client->get_pathways_by_genes(array('string' => $genes));
+			
+		}catch (SoapFault $fault){
+			 trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+		}
+		 		//debug
 /*
 		print "Request: \n".
 		htmlspecialchars($this->client->__getLastRequestHeaders()) ."\n";
@@ -51,22 +65,16 @@
 		print "Response: \n".
 		$this->client->__getLastResponse()."\n"; 
 */
-		return '<response>'.trim($res).'</response>';
+		$out = "<response>";
+		if ($res){
+			foreach ($res as $r)
+				$out .= '<pathway>'.$r.'</pathway>';
+		}	
+		$out .= "</response>";
+		return $out;
 	}
 	
- 	/**
- 	 * get_best_best_neighbors_by_gene function.
- 	 * 
- 	 * @access public
- 	 * @param mixed $gene
- 	 * @return void
- 	 */
- 	function get_best_best_neighbors_by_gene($gene){
-	
-		$res = $this->client->get_best_best_neighbors_by_gene($gene,1,10);
-		
-  		return $res;
- 	}
+
  	
  	/**
  	 * getServiceResponse function.
@@ -82,11 +90,19 @@
  			case 'bconv':
 			
  				$this->rawResponse 	= $this->bconv($_REQUEST['database'],$_REQUEST['id']);
- 				$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
-				return true;
+ 				return true;
 				break;
+			
+			case 'get_pathways_by_genes':
+			
+ 				$this->rawResponse 	= $this->get_pathways_by_genes($_REQUEST['genes']);
+ 				return true;
+				break;	
 
  		}
+ 		$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
+ 		
+
  	}
   }
 ?>
