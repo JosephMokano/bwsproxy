@@ -68,7 +68,7 @@
 		$out = "<response>";
 		if ($res){
 			foreach ($res as $r)
-				$out .= '<pathway>'.$r.'</pathway>';
+				$out .= '<pathway>'.str_replace('path:','',$r).'</pathway>';
 		}	
 		$out .= "</response>";
 		return $out;
