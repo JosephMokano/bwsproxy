@@ -89,6 +89,16 @@
  				$kegg->printResponse($format,$callback);
  		}		
 	 	break;	
+	 	
+	//Biomodels SOAP services		
+ 	case 'BIOMODELSSOAP':
+ 		
+ 		include_once('class/class.biomodels.php');
+ 		$bm = new Biomodels;
+ 		if($bm->callService($_REQUEST)){
+ 				$bm->printResponse($format,$callback);
+ 		}		
+	 	break;		
  				
  }
 
