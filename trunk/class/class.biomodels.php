@@ -53,6 +53,29 @@
 		return $out;
 	}
 	
+	function getModelByID($id){
+	
+		try {
+			$param = new SoapParam($id,"id");
+			$res = $this->client->getModelByID($param);
+			
+		}catch (SoapFault $fault){
+			 trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+		}
+/*
+				print "Request: \n".
+		htmlspecialchars($this->client->__getLastRequestHeaders()) ."\n";
+		print "Request: \n".
+		htmlspecialchars($this->client->__getLastRequest()) ."\n";
+		print "Response: \n".
+		$this->client->__getLastResponseHeaders()."\n";
+		print "Response: \n".
+		$this->client->__getLastResponse()."\n"; 
+*/
+
+		return $res;
+	}
+	
 
  	
  	/**
@@ -64,17 +87,22 @@
  	 */
  	function getServiceResponse($param){
  		
- 		switch ($_REQUEST['bwsp_service']){
- 		
- 			case 'getModelsIdByUniprotId':
-			
- 				$this->rawResponse 	= $this->getModelsIdByUniprotId($_REQUEST['uniprotId']);
- 				return true;
+		switch ($_REQUEST['bwsp_service']){
+		
+			case 'getModelsIdByUniprotId':
+		
+				$this->rawResponse 	= $this->getModelsIdByUniprotId($_REQUEST['uniprotId']);
+				return true;
 				break;
- 		}
- 		$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
- 		
 
+			case 'getModelByID':
+		
+				$this->rawResponse 	= $this->getModelByID($_REQUEST['id']);
+				return true;
+				break;
+
+		}
+ 		$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
  	}
   }
 ?>
