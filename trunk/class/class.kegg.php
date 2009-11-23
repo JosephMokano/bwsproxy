@@ -24,6 +24,27 @@
  	}
  	
 	/**
+	 * bget function.
+	 * 
+	 * @access public
+	 * @param mixed $feature
+	 * @param mixed $id
+	 * @return void
+	 */
+	function bget($feature,$id){
+	
+		try {
+			$param = new SoapParam($feature.':'.$id,"string");
+			$res = $this->client->bget($param);
+			
+		}catch (SoapFault $fault){
+			 trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+		}
+
+		return '<response><![CDATA['.trim($res).']]></response>';
+	}
+ 	
+	/**
 	 * bconv function.
 	 * 
 	 * @access public
@@ -74,6 +95,8 @@
 		return $out;
 	}
 	
+	
+	
 
  	
  	/**
@@ -87,6 +110,12 @@
  		
  		switch ($_REQUEST['bwsp_service']){
  		
+ 			case 'bget':
+			
+ 				$this->rawResponse 	= $this->bget($_REQUEST['feature'],$_REQUEST['id']);
+ 				return true;
+				break;
+				
  			case 'bconv':
 			
  				$this->rawResponse 	= $this->bconv($_REQUEST['database'],$_REQUEST['id']);
