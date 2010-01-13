@@ -21,9 +21,9 @@ Aditional parameters specific for this service are:
 These parameters can be submited by GET or POST. 
 
 == Examples ==
-In PubMed display PMIDs 12091962 and 9997 in html retrieval mode and abstract retrieval type:
+In PubMed display PMID 12091962 in xml retrieval mode and abstract retrieval type:
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_pubmed.wsdl&db=pubmed&id=12345,9997&retmode=html&rettype=abstract
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_pubmed.wsdl&db=pubmed&id=12091962&retmode=xml&rettype=abstract
 
 In PubMed display PMIDs from history statement in html retrieval mode and medline retrieval type (where x is replaced by WebEnv and query_key values): 
 
@@ -32,5 +32,3 @@ http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_form
 In PubMed display PMIDs in xml retrieval mode: 
 
 http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_pubmed.wsdl&db=pubmed&id=11748933,11700088&retmode=xml
-
-
