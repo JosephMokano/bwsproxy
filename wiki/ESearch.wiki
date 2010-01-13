@@ -27,7 +27,7 @@ http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_form
 
 Search in PubMed for the journal PNAS Volume 97, and retrieve 6 IDs starting at ID 7 using a tool parameter:
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=pubmed,term=PNAS[ta]+AND+97[vi]&retstart=6&retmax=6&tool=biomed3
+http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=pubmed&term=PNAS[ta]+AND+97[vi]&retstart=6&retmax=6&tool=biomed3
 
 Search in Journals for the term obstetrics:
 
