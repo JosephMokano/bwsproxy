@@ -23,7 +23,7 @@
  	 * @return void
  	 */
  	function __construct(){
-  		 $this->client = new SoapClient('http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl');
+  		
  	}
  	
  	/**
@@ -40,6 +40,8 @@
  		$soapParameters = array();
  		if ($param['db'])
  			$soapParameters['db'] = $param['db'];
+ 		if ($param['id'])
+ 			$soapParameters['id'] = $param['id'];	
 		if ($param['term'])
 		    $soapParameters['term'] = $param['term'];
 		if ($param['reldate'])
@@ -88,6 +90,29 @@
  		return $resxml;
  	}
  	
+ 	 function runeFetch(){
+
+		$res 	= $this->client->run_eFetch($this->parameters);
+		
+		
+/*
+		print "Request: \n".
+		htmlspecialchars($this->client->__getLastRequestHeaders()) ."\n";
+		print "Request: \n".
+		htmlspecialchars($this->client->__getLastRequest()) ."\n";
+		print "Response: \n".
+		$this->client->__getLastResponseHeaders()."\n";
+		print "Response: \n".
+		$this->client->__getLastResponse()."\n"; 
+*/
+		
+		
+		$oxml = new xmlserialize ($res);
+		$oxml->getProps(); 
+		$resxml = $oxml->varsToXml(); 
+ 		return $resxml;
+ 	}
+ 	
  	/**
  	 * getServiceResponse function.
  	 * 
@@ -97,12 +122,16 @@
  	 */
  	function getServiceResponse($param){
  	 	 	
- 	 	 	
+ 	 	 $this->client = new SoapClient($param['bwsp_url']); 
+ 	 	  	
  	 	if ($this->setParameters($param)){
  	 		switch ($param['service']){
  	 			case 'eSearch':
  	 				$content = $this->runeSearch();
- 	 				break;		
+ 	 				break;	
+ 	 			case 'eFetch':
+ 	 				$content = $this->runeFetch();
+ 	 				break;			
  	 		}
  	 		
  	 		$this->rawResponse 	= $content;
