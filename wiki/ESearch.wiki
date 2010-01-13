@@ -2,6 +2,7 @@
 
 http://eutils.ncbi.nlm.nih.gov/corehtml/query/static/esearch_help.html
 
+http://www.ncbi.nlm.nih.gov/entrez/query/static/esoap_help.html
 
 = How to use ESearch through the Biological Web Services Proxy =
 
