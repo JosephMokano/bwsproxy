@@ -23,7 +23,7 @@ These parameters can be submited by GET or POST.
 
 Search in PubMed for the term cancer for the entrez date from the last 60 days and retrieve the first 100 IDs and translations using the history parameter:
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?service=eSearch,db=pubmed,term=cancer,reldate=60,datetype=edat,retmax=100,usehistory=y
+http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl?service=eSearch,db=pubmed,term=cancer,reldate=60,datetype=edat,retmax=100,usehistory=y
 
 Search in PubMed for the journal PNAS Volume 97, and retrieve 6 IDs starting at ID 7 using a tool parameter:
 
