@@ -27,24 +27,24 @@ http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_form
 
 Search in PubMed for the journal PNAS Volume 97, and retrieve 6 IDs starting at ID 7 using a tool parameter:
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=eSearch&bwsp_response_format=raw&bwsp_url=http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed,term=PNAS[ta]+AND+97[vi]&retstart=6,retmax=6,tool=biomed3
+http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=pubmed,term=PNAS[ta]+AND+97[vi]&retstart=6&retmax=6&tool=biomed3
 
 Search in Journals for the term obstetrics:
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=eSearch&bwsp_response_format=raw&bwsp_url=http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=journals,term=obstetrics
+http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=journals&term=obstetrics
 
 Search in PubMed Central for stem cells in free fulltext articles:
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=eSearch&bwsp_response_format=raw&bwsp_url=http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc,term=stem+cells+AND+free+fulltext[filter]
+http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=pmc&term=stem+cells+AND+free+fulltext[filter]
 
  
 
 Search in Nucleotide for a property of the sequence:
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=eSearch&bwsp_response_format=raw&bwsp_url=http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nucleotide&term=biomol+trna[prop]
+http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=nucleotide&term=biomol+trna[prop]
 
  
 
 Search in Protein for a molecular weight:
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=eSearch&bwsp_response_format=raw&bwsp_url=http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=protein&term=200020[molecular+weight]
+http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=protein&term=200020[molecular+weight]
