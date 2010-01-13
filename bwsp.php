@@ -77,6 +77,13 @@
  					$blast->printResponse($format,$callback);
  				break;	
  				
+ 			case 'entrezUtils':
+ 				include_once('class/class.ncbi.entrezutils.php');
+ 				$entrez = new EntrezUtils;
+ 				if($entrez->callService($_REQUEST))
+ 					$entrez->printResponse($format,$callback);
+ 				break;		
+ 				
  		}
  		break;
  	
