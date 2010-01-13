@@ -12,6 +12,7 @@ Aditional parameters specific for this service are:
 
     * *service* (required) 
     * *db* (required)
+    * *id*
     * *rettype*  (required)
     * *term* (required) 
     * *field*   
@@ -20,31 +21,16 @@ Aditional parameters specific for this service are:
 These parameters can be submited by GET or POST. 
 
 == Examples ==
+In PubMed display PMIDs 12091962 and 9997 in html retrieval mode and abstract retrieval type:
 
-Search in PubMed for the term cancer for the entrez date from the last 60 days and retrieve the first 100 IDs and translations using the history parameter:
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_pubmed.wsdl&db=pubmed&id=12345,9997&retmode=html&rettype=abstract
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=pubmed&term=cancer&reldate=60&datetype=edat&retmax=100&usehistory=y
+In PubMed display PMIDs from history statement in html retrieval mode and medline retrieval type (where x is replaced by WebEnv and query_key values): 
 
-Search in PubMed for the journal PNAS Volume 97, and retrieve 6 IDs starting at ID 7 using a tool parameter:
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_pubmed.wsdl&db=pubmed&WebEnv=xxxx&query_key=x&retmode=html&rettype=medline 
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=pubmed&term=PNAS[ta]+AND+97[vi]&retstart=6&retmax=6&tool=biomed3
+In PubMed display PMIDs in xml retrieval mode: 
 
-Search in Journals for the term obstetrics:
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_pubmed.wsdl&db=pubmed&id=11748933,11700088&retmode=xml
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=journals&term=obstetrics
 
-Search in PubMed Central for stem cells in free fulltext articles:
-
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=pmc&term=stem+cells+AND+free+fulltext[filter]
-
- 
-
-Search in Nucleotide for a property of the sequence:
-
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=nucleotide&term=biomol+trna[prop]
-
- 
-
-Search in Protein for a molecular weight:
-
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=entrezUtils&bwsp_response_format=raw&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl&service=eSearch&db=protein&term=200020[molecular+weight]
