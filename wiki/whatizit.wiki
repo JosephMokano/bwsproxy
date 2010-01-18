@@ -6,6 +6,17 @@
 
 See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
+
+Aditional parameters specific for this service are:
+
+    * *service* (required) 
+    * *pipelineName* (required:  whatizit_Abner, whatizitSwissprotGo, whatizitSwissprot, whatizitProteinInteraction, whatizitUkPmcGenesProteins, whatizitOscar3, whatizitSwissprotFilter, whatizitDisease, whatizitProteinInteractionPMID, whatizitQbmarsdf, whatizitProteinBiolexHuman, whatizitUkPmcGoterms, whatizitCheponer, whatizitCALBCFilterTerm, whatizitDiseaseUMLSDict, whatizitMetamap, whatizitUkPmcAll, whatizitOrganisms, whatizitEBIMed, whatizitMeshUp, whatizitPathwaywiki, whatizitOrganismsFilter, whatizitGORanked, whatizitUkPmcSpecies, whatizitDrugs, whatizitCALBCFilterId, whatizitSwissprotDisease, whatizitEBIMedDiseaseChemicals, whatizitISCN, whatizitChebiDict, whatizitChemicals, whatizitSwissprotGo2, whatizitGODict, whatizitProteinDiseaseUMLS)
+
+    * *pmid* (required)
+
+
+These parameters can be submited by GET or POST. 
+
 == Examples ==
 
 
