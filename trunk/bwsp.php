@@ -60,6 +60,13 @@
  				if($blast->callService($_REQUEST))
  					$blast->printResponse($format,$callback);
  				break;	
+ 			case 'whatizit':
+ 				
+ 				include_once('class/class.ebi.whatizit.php');
+ 				$whatizit = new Whatizit;
+ 				if($whatizit->callService($_REQUEST))
+ 					$whatizit->printResponse($format,$callback);
+ 				break;		
  				
  		}
  		break;
