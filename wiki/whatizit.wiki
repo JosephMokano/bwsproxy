@@ -8,4 +8,5 @@ See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
 == Examples ==
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=what&bwsp_response_format=raw&bwsp_url=http://ubio.bioinfo.cnio.es/biotools/iHOP/cgi-bin/getRelatedSymbols?gene=P53
+
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=whatizit&bwsp_response_format=raw&bwsp_url=http://www.ebi.ac.uk/webservices/whatizit/ws?wsdl&service=queryPmid&pipelineName=whatizit_Abner&pmid=12091962
