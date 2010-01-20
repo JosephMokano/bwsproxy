@@ -59,35 +59,31 @@
  	 * @return void
  	 */
  	function runQueryPmid(){
-
-		$res 	= $this->client->queryPmid($this->parameters);
+		
+		try{ 	
+			$res 	= $this->client->queryPmid($this->parameters);
+		
+		}catch(Exception $e) {
+			return '<error>'.$e->getMessage().'</error>';
+		}
 		$oxml = new xmlserialize ($res);
 		$oxml->getProps(); 
 		$resxml = $oxml->varsToXml(); 
- 		return $resxml;
+	 	return $resxml;
  	}
  	
  	function runContact(){
 
-		$res 	= $this->client->contact($this->parameters);
+		try{ 
+			$res 	= $this->client->contact($this->parameters);
 		
-		
-/*
-		print "Request: \n".
-		htmlspecialchars($this->client->__getLastRequestHeaders()) ."\n";
-		print "Request: \n".
-		htmlspecialchars($this->client->__getLastRequest()) ."\n";
-		print "Response: \n".
-		$this->client->__getLastResponseHeaders()."\n";
-		print "Response: \n".
-		$this->client->__getLastResponse()."\n"; 
-*/
-		
-		
+		}catch(Exception $e) {
+			return '<error>'.$e->getMessage().'</error>';
+		}
 		$oxml = new xmlserialize ($res);
 		$oxml->getProps(); 
 		$resxml = $oxml->varsToXml(); 
- 		return $resxml;
+	 	return $resxml;
  	}
  	
  	
@@ -112,11 +108,13 @@
  	 				break;		
  	 		}
  	 		
- 	 		
- 	 		$this->rawResponse 	= $content;
-			$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
-			return true;
- 	 		
+ 	 		if ($content){
+ 	 			$this->rawResponse 	= $content;
+				$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
+				return true;
+			}else{
+				return false;
+			}
 	 	}else
 	 		return false;		
  	}
