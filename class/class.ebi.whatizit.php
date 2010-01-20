@@ -41,9 +41,14 @@
  		if ($param['pipelineName'])
  			$soapParameters['pipelineName'] = $param['pipelineName'];
  		if ($param['pmid'])
- 			$soapParameters['pmid'] = $param['pmid'];	
+ 			$soapParameters['pmid'] = $param['pmid'];
+ 		if ($param['text'])
+ 			$soapParameters['text'] = $param['text'];
+ 		if ($param['convertToHtml'])
+ 			$soapParameters['convertToHtml'] = $param['convertToHtml'];			
 
  		$this->parameters = $soapParameters;
+ 
  		return true;
  	}
  	
@@ -56,6 +61,15 @@
  	function runQueryPmid(){
 
 		$res 	= $this->client->queryPmid($this->parameters);
+		$oxml = new xmlserialize ($res);
+		$oxml->getProps(); 
+		$resxml = $oxml->varsToXml(); 
+ 		return $resxml;
+ 	}
+ 	
+ 	function runContact(){
+
+		$res 	= $this->client->contact($this->parameters);
 		
 		
 /*
@@ -92,8 +106,12 @@
  	 		switch ($param['service']){
  	 			case 'queryPmid':
  	 				$content = $this->runQueryPmid();
- 	 				break;	
+ 	 				break;
+ 	 			case 'contact':
+ 	 				$content = $this->runContact();
+ 	 				break;		
  	 		}
+ 	 		
  	 		
  	 		$this->rawResponse 	= $content;
 			$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
