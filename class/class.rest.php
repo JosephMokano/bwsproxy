@@ -42,6 +42,17 @@
 		$start = false;
 	    do {
 		    $line = fgets($fp);
+		    
+		    //handle redirections
+		    if (stristr($line,"location:")!="") {
+			    $redirect=preg_replace("/location:/i","",$line);
+			    $redirect = trim($redirect);
+			    $param['bwsp_url'] = $redirect;
+			    $this->getServiceResponse($param);
+			    return;
+			}
+		    
+		    
 		    if ($line === false)
 		       break;  
 		    if (preg_match('/xml/',$line))
