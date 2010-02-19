@@ -287,7 +287,7 @@
   		
   		
   		if ($format == 'raw'){
-  			header('Content-type: text/xml'); 
+  			//header('Content-type: text/xml'); 
   			echo $this->rawResponse;
   			
   		}else if ($format == 'json'){
@@ -302,6 +302,9 @@
   				echo $callback.'({"response":"'.base64_encode($this->rawResponse).'"});';
   			else
   				echo '{"response":"'.base64_encode($this->rawResponse).'"}';	
+  		 
+  		 }else if ($format == 'raw-capsule'){
+  				echo '<response>'.base64_encode($this->rawResponse).'</response>';	
   		}	
   	}
  	
