@@ -112,7 +112,17 @@
  		if($bm->callService($_REQUEST)){
  				$bm->printResponse($format,$callback);
  		}		
-	 	break;		
+	 	break;	
+	 	
+	//Biomart		
+ 	case 'BIOMART':
+ 		
+ 		include_once('class/class.biomart.php');
+ 		$biom = new Biomart;
+ 		if($biom->callService($_REQUEST)){
+ 				$biom->printResponse($format,$callback);
+ 		}		
+	 	break;			
  				
  }
 
