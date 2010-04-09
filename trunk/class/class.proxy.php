@@ -157,6 +157,7 @@
 	 */
 	function _saveService($param){
 	
+			
 		global $db;
 		if (!$u = $this->_parseUrl($param))
 			return false;	
@@ -169,6 +170,7 @@
 		
 		$strSQL	= "INSERT IGNORE INTO services SET name='".$name."',host='".$host."',cache=0";
 		$db->query($strSQL);
+
 
 		if ($db->getLastId())
 			return $db->getLastId();
@@ -197,7 +199,7 @@
 		$strSQL = "DELETE FROM queries WHERE fingerprint='".$fingerprint."'";
 		$db->query($strSQL);
 		
-		if ($this->getServiceCache($param) and $this->rawResponse and $this->jsonResponse){
+		if ($this->getServiceCache($param) and $this->rawResponse){
 			$strSQL = "INSERT INTO queries SET serviceid=".$service.", fingerprint='".$fingerprint."', row='".base64_encode($this->rawResponse)."', json='".base64_encode($this->jsonResponse)."', unixtime=".$currentTime;
 			$db->query($strSQL);
 		}
