@@ -10,91 +10,165 @@
  *
  */
  
- class EbiNCBIblast extends Proxy{
+ class EbiNCBIblast extends Rest{
  
  	public $client;
  	public $parameters;
  	public $data;
  	
- 	/**
- 	 * __construct function.
- 	 * 
- 	 * @access private
- 	 * @return void
- 	 */
- 	function __construct(){
+ 	public $jobId;
+ 	public $jobStatus;
  	
-  		 $this->client = new SoapClient('http://www.ebi.ac.uk/Tools/webservices/wsdl/WSNCBIBlast.wsdl');
- 	}
  	
- 	/**
- 	 * setParameters function.
- 	 * 
- 	 * @access public
- 	 * @param mixed $param
- 	 * @return void
- 	 */
- 	function setParameters($param){
- 	
- 		$async 		= ($param['async'])?$param['async']:0;
- 		$email		= ($param['email'])?$param['email']:'vdelatorre@cnio.es';
- 		$program	= ($param['program'])?$param['program']:'blastn';
- 		$database	= ($param['database'])?$param['database']:'embl';
- 	
- 		$this->parameters = array('async' => $async,'email' => $email, 'program' => $program,'database' => $database);
- 		
-		return true;
- 	}
- 	
- 	/**
- 	 * setData function.
- 	 * 
- 	 * @access public
- 	 * @param mixed $param
- 	 * @return void
- 	 */
- 	function setData($param){
- 	
- 		$sequence	= $param['sequence'];
- 		
-  		if (!$sequence)
- 			return false;
- 	
- 		$this->data = array(array('type' => 'sequence','content' => $sequence));
- 		
- 		return true;
- 	}
- 	
- 	/**
- 	 * runNCBIBlast function.
- 	 * 
- 	 * @access public
- 	 * @return void
- 	 */
- 	function runNCBIBlast(){
+ 	function _parseUrl($param){
+		  		
+  		$url = str_replace(',','&',$param['bwsp_url']);
+
+		if (!$url)
+			return false;
+		
+		$u = parse_url($url);
+		
+  		return $u;
+	}  
 	
-		$jobid 	= $this->client->runNCBIBlast($this->parameters,$this->data);
- 		$res = $this->client->poll($jobid,'toolxml');
- 		return $res;
+	function runBlast($param){
+		
+		if (!$u = $this->_parseUrl($param))
+			return false;	
+		
+		$buf = $this->_buildPOST($u);
+		
+		$fp = @fsockopen ($u['host'], 80);
+		stream_set_timeout($fp, 100);
+	
+		if (!$fp)
+			return false;
+		fputs($fp, $buf);
+
+		$content = "";
+		$start = false;
+	    do {
+		    $line = fgets($fp);
+		    
+		    
+		    if ($line === false)
+		       break;  
+		    
+		    $content.= $line;  
+
+ 	    } while(true);
+ 	    
+ 	    $tmp = split("\r\n\r\n",$content);
+ 	    
+		fclose($fp);
+		
+		if (!$tmp[1])
+			return false;
+			
+		$this->jobId = $this->_clearExceptions($tmp[1]);
+	}
+	
+	function getStatus($param){
+		
+		if (!$u = $this->_parseUrl($param))
+			return false;	
+			
+		$u['path'] = 'http://www.ebi.ac.uk/Tools/services/rest/ncbiblast/status/'.$this->jobId;	
+		
+		$buf = $this->_buildGET($u);
+		
+		$fp = @fsockopen ($u['host'], 80);
+		stream_set_timeout($fp, 100);
+	
+		if (!$fp)
+			return false;
+		fputs($fp, $buf);
+
+		$content = "";
+		$start = false;
+	    do {
+		    $line = fgets($fp);
+		    
+		    
+		    if ($line === false)
+		       break;  
+		    
+		    $content.= $line;  
+
+ 	    } while(true);
+ 	    
+ 	    $tmp = split("\r\n\r\n",$content);
+ 	    
+		fclose($fp);
+		
+		if (!$tmp[1])
+			return false;
+			
+		$this->jobStatus 	= 	$this->_clearExceptions($tmp[1]);
  	}
+
+	
+	
+	
+	function getResults($param){
+		
+		if (!$u = $this->_parseUrl($param))
+			return false;	
+			
+		$u['path'] = 'http://www.ebi.ac.uk/Tools/services/rest/ncbiblast/result/'.$this->jobId.'/xml';	
+		
+		$buf = $this->_buildGET($u);
+		
+		$fp = @fsockopen ($u['host'], 80);
+		stream_set_timeout($fp, 100);
+	
+		if (!$fp)
+			return false;
+		fputs($fp, $buf);
+
+		$content = "";
+		$start = false;
+	    do {
+		    $line = fgets($fp);
+		    
+		    
+		    if ($line === false)
+		       break;  
+		    
+		    $content.= $line;  
+
+ 	    } while(true);
+ 	    
+ 	    $tmp = split("\r\n\r\n",$content);
+ 	    
+		fclose($fp);
+		
+		if (!$tmp[1])
+			return false;
+			
+		$this->rawResponse 	= 	$this->_clearExceptions($tmp[1]);
+		return true;	
+			
+ 	}
+	
+	
+	function getServiceResponse($param){
+
+		$this->runBlast($param);
+		
+		if ($this->jobId){
+			//echo $this->jobId.'<br>'; 
+			$this->getStatus($param);
+			while (preg_match('/RUNNING/',$this->jobStatus)){
+				$this->getStatus($param);
+				sleep(5);
+			} 
+			$this->getResults($param);
+		}
+		
+		return true;
+	}
  	
- 	/**
- 	 * getServiceResponse function.
- 	 * 
- 	 * @access public
- 	 * @param mixed $param
- 	 * @return void
- 	 */
- 	function getServiceResponse($param){
- 	 	
- 	 	if ($this->setParameters($param) and $this->setData($param) ){
- 	 		$content = $this->runNCBIBlast();
- 	 		$this->rawResponse 	= $content;
-			$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
-			return true;
- 	 		
-	 	}else
-	 		return false;		
- 	}
- }
+  }
  ?>
