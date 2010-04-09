@@ -118,7 +118,7 @@
 		if (!$u = $this->_parseUrl($param))
 			return false;	
 			
-		$u['path'] = .= 'result/'.$this->jobId.'/xml';	
+		$u['path'] .= 'result/'.$this->jobId.'/xml';	
 		
 		$buf = $this->_buildGET($u);
 		
