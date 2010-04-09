@@ -13,11 +13,13 @@ Aditional parameters specific for this service are:
  * *database* (Default: emall)
  * *sequence* (required)
 
-*Databases*
-http://www.ebi.ac.uk/Tools/services/rest/ncbiblast/parameterdetails/database
 
 *Programs*
 http://www.ebi.ac.uk/Tools/services/rest/ncbiblast/parameterdetails/program
+
+*Databases*
+http://www.ebi.ac.uk/Tools/services/rest/ncbiblast/parameterdetails/database
+
 
 These parameters can be submited by GET or POST. 
  
