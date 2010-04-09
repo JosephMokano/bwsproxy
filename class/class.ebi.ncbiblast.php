@@ -36,6 +36,8 @@
 		
 		if (!$u = $this->_parseUrl($param))
 			return false;	
+			
+		$u['path'] .= 'run/'.$this->jobId;		
 		
 		$buf = $this->_buildPOST($u);
 		
@@ -74,7 +76,7 @@
 		if (!$u = $this->_parseUrl($param))
 			return false;	
 			
-		$u['path'] = 'http://www.ebi.ac.uk/Tools/services/rest/ncbiblast/status/'.$this->jobId;	
+		$u['path'] .= 'status/'.$this->jobId;	
 		
 		$buf = $this->_buildGET($u);
 		
@@ -116,7 +118,7 @@
 		if (!$u = $this->_parseUrl($param))
 			return false;	
 			
-		$u['path'] = 'http://www.ebi.ac.uk/Tools/services/rest/ncbiblast/result/'.$this->jobId.'/xml';	
+		$u['path'] = .= 'result/'.$this->jobId.'/xml';	
 		
 		$buf = $this->_buildGET($u);
 		
