@@ -42,7 +42,6 @@
 		$start = false;
 	    do {
 		    $line = fgets($fp);
-		    
 		    //handle redirections
 		    if (stristr($line,"location:")!="") {
 			    $redirect=preg_replace("/location:/i","",$line);
@@ -51,7 +50,7 @@
 			    $this->getServiceResponse($param);
 			    return;
 			}
-		    
+		  
 		    
 		    
 		    if ($line === false)
@@ -72,7 +71,7 @@
 		    $first = false;	
  	    } while(true);
 		fclose($fp);
-		
+
 		if (!$content)
 			return false;
 
