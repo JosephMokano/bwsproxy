@@ -37,7 +37,7 @@
 		if (!$u = $this->_parseUrl($param))
 			return false;	
 			
-		$u['path'] .= 'run/'.$this->jobId;		
+		$u['path'] .= 'run/';		
 		
 		$buf = $this->_buildPOST($u);
 		
