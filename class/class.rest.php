@@ -42,6 +42,7 @@
 		$start = false;
 	    do {
 		    $line = fgets($fp);
+
 		    //handle redirections
 		    if (stristr($line,"location:")!="") {
 			    $redirect=preg_replace("/location:/i","",$line);
@@ -50,12 +51,10 @@
 			    $this->getServiceResponse($param);
 			    return;
 			}
-		  
-		    
 		    
 		    if ($line === false)
 		       break;  
-		    if (preg_match('/\?xml/',$line))
+		    if (preg_match('/\?xml/',$line) or preg_match('/<obo>/',$line) )
 		    	$start = true;
 		    if (preg_match('/<!--/',$line))
 		    	$start = false;
@@ -64,6 +63,8 @@
 		   
 		    
 		    if ($start and !preg_match('/xml-stylesheet/',$line) and !preg_match('/<!--/',$line) and !preg_match('/-->/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or (((strlen($line) >40 or (strlen($line) >3 and $param['bwsp_service'] == 'partsRegistry_das')) and !preg_match('/Content-Type/',$line) and !preg_match('/Last-Modified/',$line) and !preg_match('/internal.sanger.ac.uk/',$line))) ) ){
+		    	
+		    			   
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
 		    	$content.= $line;  
