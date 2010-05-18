@@ -18,4 +18,4 @@ These parameters can be submited by GET or POST.
 
 == Examples ==
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=efetchSeq&bwsp_response_format=json&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_seq.wsdl&id=X82644
+http://bwsp.bioinfo.cnio.es/bwsp.php?&bwsp_service=efetchSeq&bwsp_response_format=json&bwsp_url=http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/efetch_seq.wsdl,id=X82644
