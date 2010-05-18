@@ -37,7 +37,14 @@
  	function setParameters($param){
  	
  		if (!$u = $this->_parseUrl($param))
-			return false;	
+			return false;
+			
+		$vars = explode('&',$u['path']);
+
+		foreach($vars as $string){
+		     $tmp = explode('=',$string);
+		     $u[$tmp[0]] = $tmp[1];
+		}		
  	 
  		$db 		= ($u['db'])?$u['db']:'genome';
  		$id		    = ($u['id'])?$u['id']:'';
@@ -45,6 +52,9 @@
  		$retmode	= ($u['retmode'])?$u['retmode']:'xml';
  	
  		$this->parameters = array('retmode' => $retmode,'rettype' => $rettype , 'db' => $db,'id' => $id);
+ 		//var_dump($u);
+ 		//echo $u['id'].'<br>';
+ 		//var_dump($this->parameters);
  		
 		return true;
  	}
