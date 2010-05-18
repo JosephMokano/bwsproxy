@@ -35,11 +35,14 @@
  	 * @return void
  	 */
  	function setParameters($param){
+ 	
+ 		if (!$u = $this->_parseUrl($param))
+			return false;	
  	 
- 		$db 		= ($param['db'])?$param['db']:'genome';
- 		$id		    = ($param['id'])?$param['id']:'';
- 		$rettype	= ($param['rettype'])?$param['rettype']:'';
- 		$retmode	= ($param['retmode'])?$param['retmode']:'xml';
+ 		$db 		= ($u['db'])?$u['db']:'genome';
+ 		$id		    = ($u['id'])?$u['id']:'';
+ 		$rettype	= ($u['rettype'])?$u['rettype']:'';
+ 		$retmode	= ($u['retmode'])?$u['retmode']:'xml';
  	
  		$this->parameters = array('retmode' => $retmode,'rettype' => $rettype , 'db' => $db,'id' => $id);
  		
