@@ -34,28 +34,30 @@
  	 * @return void
  	 */
  	function setParameters($param){
+ 		
+ 		$p=$this->getParameters($param);
  	 
- 		$service    = ($param['service'])?$param['service']:'eSearch';
+ 		$service    = ($p['service'])?$p['service']:'eSearch';
  		
  		$soapParameters = array();
- 		if ($param['db'])
- 			$soapParameters['db'] = $param['db'];
- 		if ($param['id'])
- 			$soapParameters['id'] = $param['id'];	
-		if ($param['term'])
-		    $soapParameters['term'] = $param['term'];
-		if ($param['reldate'])
-		    $soapParameters['reldate'] = $param['reldate'];
-		if ($param['retstart'])
-		    $soapParameters['retstart'] = $param['retstart'];
-		if ($param['retmax'])
-		    $soapParameters['retmax'] = $param['retmax'];        
-		if ($param['datetype'])
-		    $soapParameters['datetype'] = $param['datetype']; 
-		if ($param['usehistory'])
-		    $soapParameters['usehistory'] = $param['usehistory']; 
-		if ($param['tool'])
-		    $soapParameters['tool'] = $param['tool']; 
+ 		if ($p['db'])
+ 			$soapParameters['db'] = $p['db'];
+ 		if ($p['id'])
+ 			$soapParameters['id'] = $p['id'];	
+		if ($p['term'])
+		    $soapParameters['term'] = $p['term'];
+		if ($p['reldate'])
+		    $soapParameters['reldate'] = $p['reldate'];
+		if ($p['retstart'])
+		    $soapParameters['retstart'] = $p['retstart'];
+		if ($p['retmax'])
+		    $soapParameters['retmax'] = $p['retmax'];        
+		if ($p['datetype'])
+		    $soapParameters['datetype'] = $p['datetype']; 
+		if ($p['usehistory'])
+		    $soapParameters['usehistory'] = $p['usehistory']; 
+		if ($p['tool'])
+		    $soapParameters['tool'] = $p['tool']; 
 
  		$this->parameters = $soapParameters;
  		return true;
