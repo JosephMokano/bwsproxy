@@ -26,6 +26,35 @@
   		
  	}
  	
+ 	function _parseUrl($param){
+		  		
+  		if ($param['bwsp_service'] != 'biomart')
+  			$url = str_replace('||','&',$param['bwsp_url']);
+  		else
+  			$url = $param['bwsp_url'];
+
+		if (!$url)
+			return false;
+		
+		$u = parse_url($url);
+		
+  		return $u;
+	}
+	
+	function getParameters($param){
+ 	
+ 		if (!$u = $this->_parseUrl($param))
+			return false;
+
+		$vars = explode('&',$u['query']);
+
+		foreach($vars as $string){
+		     $tmp = explode('=',$string);
+		     $p[$tmp[0]] = $tmp[1];
+		}		
+		return $p;
+ 	}
+ 	
  	/**
  	 * setParameters function.
  	 * 
