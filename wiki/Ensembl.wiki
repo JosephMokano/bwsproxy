@@ -10,13 +10,13 @@ See the [http://code.google.com/p/bwsproxy/wiki/parameters Proxy parameters]
 
 === Examples ===
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/dsn
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=raw&bwsp_url=http://www.ensembl.org/das/dsn
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/sources
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=raw&bwsp_url=http://www.ensembl.org/das/sources
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/Homo_sapiens.NCBI36.transcript/features?segment=13:31787617,31871806
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=raw&bwsp_url=http://www.ensembl.org/das/Homo_sapiens.NCBI36.transcript/features?segment=13:31787617,31871806
 
-http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=json&&bwsp_url=http://www.ensembl.org/das/Gallus_gallus.WASHUC1.reference/sequence?segment=1:1,1000
+http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=ensembl_das&bwsp_response_format=raw&bwsp_url=http://www.ensembl.org/das/Gallus_gallus.WASHUC1.reference/sequence?segment=1:1,1000
 
 === Bacterial Ensembl ===
 
