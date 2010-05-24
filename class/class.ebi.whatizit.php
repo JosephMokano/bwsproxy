@@ -98,7 +98,7 @@
  	 */
  	function getServiceResponse($param){
  	 	 	
- 	 	 $this->client = new SoapClient($param['bwsp_url']); 
+ 	 	 $this->client = new SoapClient('http://www.ebi.ac.uk/webservices/whatizit/ws?wsdl'); 
  	 	  	
  	 	if ($p = $this->setParameters($param)){
  	 		switch ($p['service']){
