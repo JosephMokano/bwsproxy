@@ -12,10 +12,10 @@ These parameters can be submited by GET or POST.
 == Examples ==
 
  === bget ===
- * http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=bget&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp&feature=pathway&id=hsa05212
+ * http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=bget&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp?feature=pathway,id=hsa05212
 
  === bconv ===
- * http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=bconv&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp&database=uniprot&id=P04637
+ * http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=bconv&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp?database=uniprot,id=P04637
 
  === get_pathways_by_genes ===
- * http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=get_pathways_by_genes&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp&genes=hsa:7157
+ * http://bwsp.bioinfo.cnio.es/bwsp.php?bwsp_service=get_pathways_by_genes&bwsp_response_format=raw&bwsp_url=http://soap.genome.jp?genes=hsa:7157
