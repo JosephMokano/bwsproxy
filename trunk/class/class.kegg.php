@@ -95,9 +95,6 @@
 		return $out;
 	}
 	
-	
-	
-
  	
  	/**
  	 * getServiceResponse function.
@@ -108,23 +105,26 @@
  	 */
  	function getServiceResponse($param){
  		
+ 	
+ 		$p=$this->getParameters($param);
+ 		
  		switch ($_REQUEST['bwsp_service']){
  		
  			case 'bget':
 			
- 				$this->rawResponse 	= $this->bget($_REQUEST['feature'],$_REQUEST['id']);
+ 				$this->rawResponse 	= $this->bget($p['feature'],$p['id']);
  				return true;
 				break;
 				
  			case 'bconv':
 			
- 				$this->rawResponse 	= $this->bconv($_REQUEST['database'],$_REQUEST['id']);
+ 				$this->rawResponse 	= $this->bconv($p['database'],$p['id']);
  				return true;
 				break;
 			
 			case 'get_pathways_by_genes':
 			
- 				$this->rawResponse 	= $this->get_pathways_by_genes($_REQUEST['genes']);
+ 				$this->rawResponse 	= $this->get_pathways_by_genes($p['genes']);
  				return true;
 				break;	
 
