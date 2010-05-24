@@ -34,22 +34,24 @@
  	 * @return void
  	 */
  	function setParameters($param){
+ 	
+ 		$p=$this->getParameters($param);
  	 
- 		$service    = ($param['service'])?$param['service']:'queryPmid';
+ 		$service    = ($p['service'])?$p['service']:'queryPmid';
  		
  		$soapParameters = array();
- 		if ($param['pipelineName'])
- 			$soapParameters['pipelineName'] = $param['pipelineName'];
- 		if ($param['pmid'])
- 			$soapParameters['pmid'] = $param['pmid'];
- 		if ($param['text'])
- 			$soapParameters['text'] = $param['text'];
- 		if ($param['convertToHtml'])
- 			$soapParameters['convertToHtml'] = $param['convertToHtml'];			
+ 		if ($p['pipelineName'])
+ 			$soapParameters['pipelineName'] = $p['pipelineName'];
+ 		if ($p['pmid'])
+ 			$soapParameters['pmid'] = $p['pmid'];
+ 		if ($p['text'])
+ 			$soapParameters['text'] = $p['text'];
+ 		if ($p['convertToHtml'])
+ 			$soapParameters['convertToHtml'] = $p['convertToHtml'];			
 
  		$this->parameters = $soapParameters;
  
- 		return true;
+ 		return $p;
  	}
  	
  	/**
@@ -98,8 +100,8 @@
  	 	 	
  	 	 $this->client = new SoapClient($param['bwsp_url']); 
  	 	  	
- 	 	if ($this->setParameters($param)){
- 	 		switch ($param['service']){
+ 	 	if ($p = $this->setParameters($param)){
+ 	 		switch ($p['service']){
  	 			case 'queryPmid':
  	 				$content = $this->runQueryPmid();
  	 				break;
