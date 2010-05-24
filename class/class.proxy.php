@@ -37,6 +37,20 @@
 		
   		return $u;
 	}
+	
+	function getParameters($param){
+ 	
+ 		if (!$u = $this->_parseUrl($param))
+			return false;
+
+		$vars = explode('&',$u['query']);
+
+		foreach($vars as $string){
+		     $tmp = explode('=',$string);
+		     $p[$tmp[0]] = $tmp[1];
+		}		
+		return $p;
+ 	}
  	
  	/**
  	 * serializeRequest function.
@@ -280,6 +294,8 @@
   		return true;
   	
   	}
+  	
+
   	
   	/**
   	 * printResponse function.
