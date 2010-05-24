@@ -36,7 +36,7 @@
  	function setParameters($param){
  		
  		$p=$this->getParameters($param);
- 	 
+ 		
  		$service    = ($p['service'])?$p['service']:'eSearch';
  		
  		$soapParameters = array();
@@ -60,7 +60,7 @@
 		    $soapParameters['tool'] = $p['tool']; 
 
  		$this->parameters = $soapParameters;
- 		return true;
+ 		return $p;
  	}
  	
  	/**
@@ -126,8 +126,9 @@
  	 	 	
  	 	 $this->client = new SoapClient($param['bwsp_url']); 
  	 	  	
- 	 	if ($this->setParameters($param)){
- 	 		switch ($param['service']){
+ 	 	if ($p = $this->setParameters($param)){
+ 	 	
+ 	 		switch ($p['service']){
  	 			case 'eSearch':
  	 				$content = $this->runeSearch();
  	 				break;	
