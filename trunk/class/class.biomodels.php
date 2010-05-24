@@ -86,18 +86,20 @@
  	 * @return void
  	 */
  	function getServiceResponse($param){
+ 	
+ 		$p=$this->getParameters($param);
  		
 		switch ($_REQUEST['bwsp_service']){
 		
 			case 'getModelsIdByUniprotId':
 		
-				$this->rawResponse 	= $this->getModelsIdByUniprotId($_REQUEST['uniprotId']);
+				$this->rawResponse 	= $this->getModelsIdByUniprotId($p['uniprotId']);
 				return true;
 				break;
 
 			case 'getModelByID':
 		
-				$this->rawResponse 	= $this->getModelByID($_REQUEST['id']);
+				$this->rawResponse 	= $this->getModelByID($p['id']);
 				return true;
 				break;
 
