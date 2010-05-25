@@ -36,20 +36,12 @@
  	 */
  	function setParameters($param){
  	
- 		if (!$u = $this->_parseUrl($param))
-			return false;
-			
-		$vars = explode('&',$u['path']);
-
-		foreach($vars as $string){
-		     $tmp = explode('=',$string);
-		     $u[$tmp[0]] = $tmp[1];
-		}		
+		$p=$this->getParameters($param);		
  	 
- 		$db 		= ($u['db'])?$u['db']:'genome';
- 		$id		    = ($u['id'])?$u['id']:'';
- 		$rettype	= ($u['rettype'])?$u['rettype']:'';
- 		$retmode	= ($u['retmode'])?$u['retmode']:'xml';
+ 		$db 		= ($p['db'])?$p['db']:'genome';
+ 		$id		    = ($p['id'])?$p['id']:'';
+ 		$rettype	= ($p['rettype'])?$p['rettype']:'';
+ 		$retmode	= ($p['retmode'])?$p['retmode']:'xml';
  	
  		$this->parameters = array('retmode' => $retmode,'rettype' => $rettype , 'db' => $db,'id' => $id);
  		//var_dump($u);
