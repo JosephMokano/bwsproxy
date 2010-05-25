@@ -124,7 +124,7 @@
  	 */
  	function getServiceResponse($param){
  	 	 	
- 	 	 $this->client = new SoapClient($param['bwsp_url']); 
+ 	 	 $this->client = new SoapClient('http://www.ncbi.nlm.nih.gov/entrez/eutils/soap/v2.0/eutils.wsdl'); 
  	 	  	
  	 	if ($p = $this->setParameters($param)){
  	 	
