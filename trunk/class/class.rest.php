@@ -24,10 +24,9 @@
 
 		if (!$u = $this->_parseUrl($param))
 			return false;	
-			
-		
-		//force GET DAS request for the uniprot DAS
-		if ($param['bwsp_service'] == 'quickgo' or preg_match('/\/das\/uniprot/',$param['bwsp_url']) or preg_match('/partsregistry.org\/das/',$param['bwsp_url']) or preg_match('/madas/',$param['bwsp_url'])  or preg_match('/ws.bioinfo.cnio.es/',$param['bwsp_url']) or preg_match('/string-db.org/',$param['bwsp_url']))
+		if ($param['bwsp_service'] == 'tumor-pathways')
+			$buf = $this->_buildPOST($u);
+		else if ($param['bwsp_service'] == 'quickgo' or preg_match('/\/das\/uniprot/',$param['bwsp_url']) or preg_match('/partsregistry.org\/das/',$param['bwsp_url']) or preg_match('/madas/',$param['bwsp_url'])  or preg_match('/ws.bioinfo.cnio.es/',$param['bwsp_url']) or preg_match('/string-db.org/',$param['bwsp_url']))
 			$buf = $this->_buildGET($u);
 		else
 			$buf = $this->_buildPOST($u);
