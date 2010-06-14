@@ -25,7 +25,7 @@
 	 */
 	function _parseUrl($param){
 		  		
-  		if ($param['bwsp_service'] != 'biomart')
+  		if ($param['bwsp_service'] != 'biomart' && $param['bwsp_service'] != 'general_das')
   			$url = str_replace(',','&',$param['bwsp_url']);
   		else
   			$url = $param['bwsp_url'];
