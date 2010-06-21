@@ -26,6 +26,7 @@
 			return false;	
 		if ($param['bwsp_service'] == 'tumor-pathways')
 			$buf = $this->_buildPOST($u);
+		
 		else if ($param['bwsp_service'] == 'quickgo' or preg_match('/\/das\/uniprot/',$param['bwsp_url']) or preg_match('/partsregistry.org\/das/',$param['bwsp_url']) or preg_match('/madas/',$param['bwsp_url'])  or preg_match('/ws.bioinfo.cnio.es/',$param['bwsp_url']) or preg_match('/string-db.org/',$param['bwsp_url']))
 			$buf = $this->_buildGET($u);
 		else
@@ -42,6 +43,7 @@
 		$start = false;
 	    do {
 		    $line = fgets($fp);
+		    //echo $line.'<br>';
 
 		    //handle redirections
 		    if (stristr($line,"location:")!="") {
@@ -97,6 +99,7 @@
 		$buf .= "Content-length: ".strlen($u['query'])."\r\n";
 		$buf .= "\r\n";
 		$buf .= $u['query'];
+		//echo $buf;
 		return $buf;
 	}
 	

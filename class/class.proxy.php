@@ -29,7 +29,8 @@
   			$url = str_replace(',','&',$param['bwsp_url']);
   		else
   			$url = $param['bwsp_url'];
-
+  			
+  
 		if (!$url)
 			return false;
 		
@@ -87,12 +88,13 @@
 			return false;	
 			
 		$name 	= $param['bwsp_service'];
+
 		$host	= $u['host'];
 		
 		if (!$name or !$host)
 			return false;	
 			
-		$strSQL = "SELECT t.type FROM services s, types t WHERE s.typeid=t.typeid AND s.name='".$name."' AND s.host='".$host."'";
+		$strSQL = "SELECT t.type FROM services s, types t WHERE s.typeid=t.typeid AND s.name='".$name."'";
 		$row = $db->get_row($strSQL);
 		return $row->type;
 

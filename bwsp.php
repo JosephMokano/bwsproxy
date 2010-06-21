@@ -36,11 +36,12 @@
  	exit;
  }
  $type = $proxy->getServiceType($_REQUEST);
- switch ($type){
  
+ switch ($type){
+	 
  	//REST services
  	case 'REST':
- 		
+
  		if (!isset($serviceUrl))
  			exit; 
  		$rest = new Rest;
