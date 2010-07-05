@@ -70,7 +70,7 @@
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
 		    		
-		    	$content.= $this->_clearExceptions($line);  
+		    	$content.= $this->_clearLine($line);  
 		    }    
 		    $first = false;	
  	    } while(true);
@@ -79,7 +79,7 @@
 		if (!$content)
 			return false;
 
-		$this->rawResponse 	= $content;
+		$this->rawResponse 	= $this->_clearLine($content);
 		$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rawResponse));
 		return true;
 	}
@@ -120,6 +120,12 @@
 		return $buf;
 
 	}
+	
+	function _clearLine($c){
+		$c = preg_replace('/<!--*?-->/m','',$c);
+		
+		return $c;
+	}	
 	
 	function _clearExceptions($c){
 		$c = str_replace('->',' TO ',$c);
