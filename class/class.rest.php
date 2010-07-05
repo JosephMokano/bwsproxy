@@ -79,7 +79,7 @@
 		if (!$content)
 			return false;
 
-		$this->rawResponse 	= $this->_clearLine($content);
+		$this->rawResponse 	= $this->_clearExceptions($content);
 		$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rawResponse));
 		return true;
 	}
