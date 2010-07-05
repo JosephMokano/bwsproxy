@@ -64,12 +64,13 @@
 		    	$start = true;		   
 		   
 		    
-		    if ($start and !preg_match('/xml-stylesheet/',$line) and !preg_match('/<!--/',$line) and !preg_match('/-->/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or (((strlen($line) >40 or (strlen($line) >3 and $param['bwsp_service'] == 'partsRegistry_das')) and !preg_match('/Content-Type/',$line) and !preg_match('/Last-Modified/',$line) and !preg_match('/internal.sanger.ac.uk/',$line))) ) ){
+		    if ($start and !preg_match('/xml-stylesheet/',$line) and (preg_match('/^ /',$line) or preg_match('/^</',$line) or preg_match('/>/',$line) or (((strlen($line) >40 or (strlen($line) >3 and $param['bwsp_service'] == 'partsRegistry_das')) and !preg_match('/Content-Type/',$line) and !preg_match('/Last-Modified/',$line) and !preg_match('/internal.sanger.ac.uk/',$line))) ) ){
 		    	
 		    			   
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
-		    	$content.= $line;  
+		    		
+		    	$content.= $this->_clearExceptions($line);  
 		    }    
 		    $first = false;	
  	    } while(true);
@@ -78,7 +79,7 @@
 		if (!$content)
 			return false;
 
-		$this->rawResponse 	= $this->_clearExceptions($content);
+		$this->rawResponse 	= $content;
 		$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rawResponse));
 		return true;
 	}
