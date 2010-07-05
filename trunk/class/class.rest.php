@@ -70,7 +70,7 @@
 		    	if (!preg_match('/^</',$line))
 		    		$content = trim($content);
 		    		
-		    	$content.= $this->_clearLine($line);  
+		    	$content.= $line;  
 		    }    
 		    $first = false;	
  	    } while(true);
@@ -121,16 +121,13 @@
 
 	}
 	
-	function _clearLine($c){
-		$c = preg_replace('/<!--*?-->/m','',$c);
-		
-		return $c;
-	}	
+
 	
 	function _clearExceptions($c){
+		$c = preg_replace('/<!--*?-->/m','',$c);
 		$c = str_replace('->',' TO ',$c);
 		$c = str_replace('"category','" category',$c);
-		$c = preg_replace('/<!--*?-->/m','',$c);
+		
 		
 		return $c;
 	}
