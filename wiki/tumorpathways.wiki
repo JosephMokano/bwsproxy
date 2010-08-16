@@ -4,7 +4,7 @@ Combining many sources of information, we were able to create a dataset containi
 
 This web-service provides the resulting associations between the tumour types and cellular processes, pathways, and protein domains containing a significant number of mutated genes. Three threshold values (0.1, 0.01, 0.001) can be used to filter the fisher's test results. 
 
-The information is provided in graphml format. Fore each tumour type the list of mutated gene is also provided. 
+The information is provided in [http://graphml.graphdrawing.org/ graphml] format. Fore each tumour type the list of mutated gene is also provided. 
 
 The raw data is also available to download in tab separate format:
 
