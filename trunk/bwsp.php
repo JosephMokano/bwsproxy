@@ -123,7 +123,21 @@
  		if($biom->callService($_REQUEST)){
  				$biom->printResponse($format,$callback);
  		}		
-	 	break;			
+	 	break;	
+	 	
+	//INBSOAP	
+ 	case 'INBSOAP':
+		switch($service){
+		
+ 			case 'runncbiblastn':
+ 				
+ 				include_once('class/class.inb.runncbiblastn.php');
+ 				$blast = new RunNcbiBlastn;
+ 				if($blast->callService($_REQUEST))
+ 					$blast->printResponse($format,$callback);
+ 				break;	
+ 		}
+ 		break;
  				
  }
 

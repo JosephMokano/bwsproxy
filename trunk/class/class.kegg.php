@@ -129,7 +129,7 @@
 				break;	
 
  		}
- 		$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
+ 		//$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
  		
 
  	}
