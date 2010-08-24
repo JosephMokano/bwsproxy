@@ -141,7 +141,7 @@
  	 		
  	 		if ($content){
  	 			$this->rawResponse 	= $content;
-				$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
+				//$this->jsonResponse = xml2json::transformXmlStringToJson($this->rawResponse);
 				return true;
 			}else{
 				return false;
