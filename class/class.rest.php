@@ -80,7 +80,7 @@
 			return false;
 
 		$this->rawResponse 	= $this->_clearExceptions($content);
-		$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rawResponse));
+		//$this->jsonResponse = str_replace('@attributes','attributes',xml2json::transformXmlStringToJson($this->rawResponse));
 		return true;
 	}
 
