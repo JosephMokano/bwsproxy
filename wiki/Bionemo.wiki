@@ -1,0 +1,25 @@
+The goal of this web service is to provide REST access to the bionemo database
+
+http://bionemo.bioinfo.cnio.es
+
+=Examples=
+
+==Genes==
+
+*Get all genes*
+
+http://ws.bioinfo.cnio.es/rest/bionemo/index.php?cmd=getAllGenes
+
+*Get gene by Iname*
+
+http://ws.bioinfo.cnio.es/rest/bionemo/index.php?cmd=getGeneByName&id=etbA1
+
+==Operons==
+
+*Get all operons*
+
+http://ws.bioinfo.cnio.es/rest/bionemo/index.php?cmd=getAllOperons
+
+*Get operon by name*
+
+http://ws.bioinfo.cnio.es/rest/bionemo/index.php?cmd=getOperonByName&id=catABC
